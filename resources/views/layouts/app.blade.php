@@ -19,6 +19,15 @@
   <link rel="stylesheet" href="/css/welcome.css">
   <link rel="icon" type="image/png" href="{{ asset('images/logo-visa.png') }}">
   <meta name="google-site-verification" content="v3a4GIxrzeL_-CREGIxh637YuJXf8SUANTbLrCCQ45c" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9S0JHC6XS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-W9S0JHC6XS');
+  </script>
 </head>
 
 <body class="font-sans bg-[var(--color-bg)] text-slate-900 leading-relaxed antialiased">
