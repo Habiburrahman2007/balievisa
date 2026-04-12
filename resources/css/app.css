@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Portal Color Palette */
+    --color-navy: #002B5B;
+    --color-navy-light: #003D7A;
+    --color-navy-dark: #001B3D;
+    --color-gold: #FFC107;
+    --color-gold-dark: #E5AC00;
+    --color-bg: #F8FAFC;
+    --color-bg-alt: #EEF2F7;
+}
+
+@layer base {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+    }
+}
+
+/* FAQ Accordion */
+[data-faq].open .faq-a {
+    max-height: 500px;
+    padding-bottom: 0;
+}
+[data-faq].open .faq-chevron {
+    transform: rotate(180deg);
+}
+[data-faq].open {
+    border-color: rgba(0, 43, 91, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 43, 91, 0.06);
+}

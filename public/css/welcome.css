@@ -1,0 +1,300 @@
+/* ═══════════════════════════════════════════════════════════════
+   Immigration Portal – Global Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Reveal Animations ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── Navbar Scroll ─────────────────────────────────────────── */
+#main-navbar.scrolled {
+  background: #ffffff;
+  box-shadow: 0 4px 24px rgba(0, 43, 91, 0.12);
+}
+
+/* ── Mobile Menu Overlay ───────────────────────────────────── */
+#nav-links.open {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 43, 91, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100;
+  padding: 24px;
+  gap: 20px;
+}
+
+#nav-links.open a {
+  color: #ffffff !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+}
+
+#nav-links.open a:hover {
+  color: #FFC107 !important;
+}
+
+/* ── Quick Action Cards ────────────────────────────────────── */
+.qa-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.qa-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 43, 91, 0.12);
+  border-color: #FFC107;
+}
+
+.qa-card:hover .qa-icon {
+  background: #FFC107;
+  color: #002B5B;
+}
+
+.qa-card .qa-icon {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── News Cards ────────────────────────────────────────────── */
+.news-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 43, 91, 0.1);
+}
+
+/* ── FAQ Accordion ─────────────────────────────────────────── */
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-item.open .faq-a {
+  max-height: 300px;
+}
+
+/* ── High Contrast Mode ────────────────────────────────────── */
+html.high-contrast {
+  --hc-bg: #000000;
+  --hc-text: #FFFFFF;
+  --hc-accent: #FFD700;
+  --hc-border: #FFFFFF;
+}
+
+html.high-contrast body {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.high-contrast #utility-bar {
+  background: #000000 !important;
+  border-bottom: 2px solid #FFD700 !important;
+}
+
+html.high-contrast #main-navbar {
+  background: #111111 !important;
+  border-bottom: 2px solid #FFD700 !important;
+}
+
+html.high-contrast a,
+html.high-contrast button {
+  color: #FFD700 !important;
+}
+
+html.high-contrast .qa-card,
+html.high-contrast .news-card {
+  background: #111111 !important;
+  border-color: #FFD700 !important;
+  color: #FFFFFF !important;
+}
+
+html.high-contrast .qa-card h3,
+html.high-contrast .news-card h3,
+html.high-contrast .qa-card p,
+html.high-contrast .news-card p {
+  color: #FFFFFF !important;
+}
+
+html.high-contrast section {
+  background: #000000 !important;
+}
+
+html.high-contrast footer {
+  background: #000000 !important;
+  border-top: 2px solid #FFD700 !important;
+}
+
+html.high-contrast input,
+html.high-contrast textarea,
+html.high-contrast select {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  border-color: #FFD700 !important;
+}
+
+/* ── Accessibility Widget ──────────────────────────────────── */
+.a11y-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+}
+
+.a11y-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #002B5B;
+  color: #FFC107;
+  border: 3px solid #FFC107;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 43, 91, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.a11y-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(0, 43, 91, 0.4);
+}
+
+.a11y-panel {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: #ffffff;
+  border: 2px solid #002B5B;
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 220px;
+  box-shadow: 0 12px 40px rgba(0, 43, 91, 0.15);
+  display: none;
+}
+
+.a11y-panel.open {
+  display: block;
+}
+
+.a11y-panel h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #002B5B;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.a11y-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #E2E8F0;
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.a11y-option:last-child {
+  border-bottom: none;
+}
+
+.a11y-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #CBD5E1;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.a11y-toggle.active {
+  background: #FFC107;
+}
+
+.a11y-toggle::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.a11y-toggle.active::after {
+  transform: translateX(20px);
+}
+
+/* ── Language Switcher ─────────────────────────────────────── */
+.lang-switch {
+  display: inline-flex;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.lang-switch a {
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-switch a.active {
+  background: #FFC107;
+  color: #002B5B;
+}
+
+.lang-switch a:not(.active) {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.lang-switch a:not(.active):hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Smooth Gradient Pulse ─────────────────────────────────── */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(255, 193, 7, 0); }
+}
+
+.gold-pulse {
+  animation: goldPulse 2s ease-in-out infinite;
+}
