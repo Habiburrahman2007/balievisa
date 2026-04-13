@@ -42,8 +42,20 @@
         </ul>
       </div>
 
-      {{-- Right-side: Language Dropdown + Help --}}
+      {{-- Right-side: Language Dropdown + Help + Mobile Toggle --}}
       <div class="flex items-center gap-3">
+        {{-- Mobile Toggle --}}
+        <button id="mobile-toggle"
+          class="lg:hidden flex items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
+          aria-label="Toggle menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+
         {{-- Language Dropdown --}}
         <div class="relative" id="lang-dropdown-wrap">
           <button id="lang-dropdown-btn" type="button"
@@ -100,5 +112,23 @@
         </a>
       </div>
     </div>
+  </div>
+
+  {{-- Mobile Navigation Overlay --}}
+  <div id="nav-links" class="hidden">
+    {{-- Close Button --}}
+    <button class="absolute top-6 right-6 text-white text-3xl transition-all hover:text-[var(--color-gold)] cursor-pointer" 
+            onclick="document.getElementById('nav-links').classList.remove('open')"
+            aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <a href="/">{{ __('site.nav_home') }}</a>
+    <a href="{{ route('arrival-card') }}">{{ __('site.nav_arrival') }}</a>
+    <a href="{{ route('visa') }}">{{ __('site.nav_visa') }}</a>
+    <a href="/bali-levy">{{ __('site.nav_levy') }}</a>
+    <a href="{{ route('steps') }}">{{ __('site.nav_steps') }}</a>
+    <a href="{{ route('news') }}">{{ __('site.nav_news') }}</a>
+    <a href="/faq">{{ __('site.nav_help') }}</a>
   </div>
 </nav>
