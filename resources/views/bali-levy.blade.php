@@ -37,7 +37,7 @@
           {{ __('site.levy_card_desc') }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 pt-2">
-          <a href="https://wa.me/62895330440544"
+          <a href="https://wa.me/62895330440544?text=Hi%2C%20I%E2%80%99m%20traveling%20to%20Bali%20soon%20and%20need%20help%20with%20the%20Bali%20Tourist%20Tax%20payment.%0ACould%20you%20assist%20me%3F"
             class="inline-flex items-center justify-center gap-2 bg-[var(--color-gold)] text-[var(--color-navy)] px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-[0_8px_32px_rgba(255,193,7,0.35)] hover:shadow-[0_12px_40px_rgba(255,193,7,0.5)] hover:-translate-y-1">
             {{ __('site.levy_btn_pay') }}
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -45,7 +45,7 @@
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
-          <a href="https://wa.me/62895330440544"
+          <a href="https://wa.me/62895330440544?text=Hi%2C%20I%E2%80%99m%20traveling%20to%20Bali%20soon%20and%20need%20help%20with%20the%20Bali%20Tourist%20Tax%20payment.%0ACould%20you%20assist%20me%3F"
             class="inline-flex items-center justify-center gap-2 bg-white border-2 border-[var(--color-navy)] text-[var(--color-navy)] hover:bg-[var(--color-navy)]/5 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:shadow-lg">
             {{ __('site.levy_btn_status') }}
           </a>
@@ -53,10 +53,12 @@
       </div>
 
       <div class="w-full md:w-84 bg-gray-50/80 rounded-2xl p-7 border border-gray-100 shadow-inner">
-        <h3 class="font-bold text-[var(--color-navy)] mb-2 uppercase tracking-wide text-sm">{{ __('site.levy_amount_label') }}</h3>
+        <h3 class="font-bold text-[var(--color-navy)] mb-2 uppercase tracking-wide text-sm">
+          {{ __('site.levy_amount_label') }}</h3>
         <div class="text-4xl font-black text-gray-900 mb-1">{{ __('site.levy_amount_val') }}</div>
-        <p class="text-sm text-gray-500 mb-3 font-medium bg-gray-200 inline-block px-2 py-1 rounded-md">{{ __('site.levy_amount_sub') }}</p>
-        
+        <p class="text-sm text-gray-500 mb-3 font-medium bg-gray-200 inline-block px-2 py-1 rounded-md">
+          {{ __('site.levy_amount_sub') }}</p>
+
         <div class="flex items-center justify-between border-t border-gray-200 pt-3 mb-6">
           <span class="text-sm font-bold text-slate-700">{{ __('site.levy_fee_label') }}</span>
           <span class="text-xl font-bold text-[var(--color-navy)]">{{ __('site.levy_fee_val') }}</span>
@@ -89,7 +91,8 @@
   {{-- Information Grid --}}
   <section class="max-w-[1200px] mx-auto px-6 mb-32">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-navy)] mb-6 tracking-tight">{{ __('site.levy_grid_title') }}</h2>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-navy)] mb-6 tracking-tight">
+        {{ __('site.levy_grid_title') }}</h2>
       <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">{{ __('site.levy_grid_subtitle') }}</p>
     </div>
 
@@ -111,7 +114,8 @@
           </div>
         </div>
         <div class="p-8 pb-10 flex-1 flex flex-col">
-          <h3 class="text-2xl font-bold text-[var(--color-navy)] mb-4 tracking-tight">{{ __('site.levy_nature_title') }}</h3>
+          <h3 class="text-2xl font-bold text-[var(--color-navy)] mb-4 tracking-tight">{{ __('site.levy_nature_title') }}
+          </h3>
           <p class="text-gray-600 leading-relaxed text-base font-medium flex-1">{{ __('site.levy_nature_desc') }}</p>
         </div>
       </div>
@@ -135,7 +139,8 @@
           </div>
         </div>
         <div class="p-8 pb-10 flex-1 flex flex-col">
-          <h3 class="text-2xl font-bold text-[var(--color-navy)] mb-4 tracking-tight">{{ __('site.levy_culture_title') }}</h3>
+          <h3 class="text-2xl font-bold text-[var(--color-navy)] mb-4 tracking-tight">{{ __('site.levy_culture_title') }}
+          </h3>
           <p class="text-gray-600 leading-relaxed text-base font-medium flex-1">{{ __('site.levy_culture_desc') }}</p>
         </div>
       </div>
@@ -159,7 +164,8 @@
           </div>
         </div>
         <div class="p-8 pb-10 flex-1 flex flex-col">
-          <h3 class="text-2xl font-bold text-[var(--color-navy)] mb-4 tracking-tight">{{ __('site.levy_infra_title') }}</h3>
+          <h3 class="text-2xl font-bold text-[var(--color-navy)] mb-4 tracking-tight">{{ __('site.levy_infra_title') }}
+          </h3>
           <p class="text-gray-600 leading-relaxed text-base font-medium flex-1">{{ __('site.levy_infra_desc') }}</p>
         </div>
       </div>
