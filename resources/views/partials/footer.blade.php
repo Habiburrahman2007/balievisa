@@ -58,17 +58,14 @@
         <div>
           <div class="text-[13px] font-bold text-white mb-5 uppercase tracking-wide">{{ __('site.footer_legal') }}</div>
           <ul class="flex flex-col gap-2.5 list-none">
-            <li><a href="#"
+            <li><a href="{{ route('privacy-policy') }}"
                 class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_privacy') }}</a>
             </li>
-            <li><a href="#"
+            <li><a href="{{ route('terms-and-conditions') }}"
                 class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_terms') }}</a>
             </li>
-            <li><a href="#"
+            <li><a href="{{ route('refund-policy') }}"
                 class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_refund') }}</a>
-            </li>
-            <li><a href="#"
-                class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_cookie') }}</a>
             </li>
           </ul>
         </div>
@@ -108,11 +105,11 @@
     <div class="py-6 flex flex-wrap items-center justify-between gap-3">
       <span class="text-[13px]">{{ __('site.footer_copyright') }}</span>
       <div class="flex gap-5">
-        <a href="#"
+        <a href="{{ route('privacy-policy') }}"
           class="text-[13px] text-white/50 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_privacy') }}</a>
-        <a href="#"
+        <a href="{{ route('terms-and-conditions') }}"
           class="text-[13px] text-white/50 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_terms') }}</a>
-        <a href="#"
+        <a href="{{ route('refund-policy') }}"
           class="text-[13px] text-white/50 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_refund') }}</a>
       </div>
     </div>

@@ -32,6 +32,18 @@ Route::get('/faq', function () {
     return view('faq');
 })->name('faq');
 
+Route::get('/privacy-policy', function () {
+    return view('privacy');
+})->name('privacy-policy');
+
+Route::get('/refund-policy', function () {
+    return view('refund');
+})->name('refund-policy');
+
+Route::get('/terms-and-conditions', function () {
+    return view('terms');
+})->name('terms-and-conditions');
+
 Route::get('/news', function () {
     $articles = Article::where('is_published', true)
         ->latest('published_at')
