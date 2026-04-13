@@ -22,7 +22,7 @@ return [
     // ─── Hero ───────────────────────────────────────────
     'hero_badge'       => 'Trusted Visa Consultation Company',
     'hero_title_1'     => 'Your Trusted Partner for',
-    'hero_title_hl'    => 'Indonesia e-Visa on Arrival',
+    'hero_title_hl'    => 'Indonesia Electronic Visa On Arrival',
     'hero_title_2'     => 'Services',
     'hero_subtitle'    => 'We are a professional visa consultancy helping foreign nationals navigate the Indonesian immigration process with ease, speed, and confidence.',
     'hero_cta_apply'   => 'Apply Now',
@@ -40,7 +40,7 @@ return [
     // ─── Quick Actions ──────────────────────────────────
     'qa_title'       => 'Quick Actions',
     'qa_subtitle'    => 'Access our core immigration services with just one click.',
-    'qa_evoa'        => 'e-Visa on Arrival',
+    'qa_evoa'        => 'Electronic Visa On Arrival (E-VOA)',
     'qa_evoa_d'      => 'Apply for a 30-day tourist visa online. Results delivered to your email within 24 hours.',
     'qa_extend'      => 'Visa Extension',
     'qa_extend_d'    => 'Extend your stay for an additional 30 days without leaving Indonesia.',
@@ -60,12 +60,12 @@ return [
     'news_view_all'  => 'View All Announcements',
 
     'news_1_date'    => 'April 5, 2026',
-    'news_1_title'   => 'Indonesia Extends e-VoA to 97 Countries',
+    'news_1_title'   => 'Indonesia Extends E-VOA to 97 Countries',
     'news_1_excerpt' => 'The Directorate General of Immigration has officially expanded the e-Visa on Arrival program to include nationals from 97 eligible countries, effective immediately.',
 
     'news_2_date'    => 'March 28, 2026',
     'news_2_title'   => 'New Digital Immigration Gate at Ngurah Rai Airport',
-    'news_2_excerpt' => 'Bali\'s international airport introduces automated e-Gate kiosks for e-VoA holders, reducing average immigration clearance time to under 2 minutes.',
+    'news_2_excerpt' => 'Bali\'s international airport introduces automated e-Gate kiosks for E-VOA holders, reducing average immigration clearance time to under 2 minutes.',
 
     'news_3_date'    => 'March 15, 2026',
     'news_3_title'   => 'Visa Extension Processing Now Fully Digital',
@@ -82,7 +82,7 @@ return [
     'cta_whatsapp'   => 'Chat on WhatsApp',
 
     // ─── Footer ─────────────────────────────────────────
-    'footer_desc'       => 'A trusted Bali-based visa consultation company helping foreign nationals obtain their Indonesia e-Visa on Arrival quickly, safely, and stress-free.',
+    'footer_desc'       => 'A trusted Bali-based visa consultation company helping foreign nationals obtain their Indonesia Electronic Visa On Arrival (E-VOA) quickly, safely, and stress-free.',
     'footer_nav'        => 'Navigation',
     'footer_legal'      => 'Legal',
     'footer_contact'    => 'Contact Us',
@@ -119,7 +119,7 @@ return [
     'svc_badge'       => 'What We Offer',
     'svc_title'       => 'Our Services',
     'svc_subtitle'    => 'Comprehensive visa consultation services tailored for every type of traveler visiting Indonesia.',
-    'svc_evoa_t'      => 'e-Visa on Arrival (e-VoA)',
+    'svc_evoa_t'      => 'Electronic Visa On Arrival (e-VoA) / B1',
     'svc_evoa_d'      => 'The B1 Tourist e-VoA allows a 30-day stay (extendable). We handle the full online application and submission on your behalf, with results in 24 hours.',
     'svc_evoa_price'  => 'IDR 730,000',
     'svc_evoa_label'  => 'Starting from',
@@ -149,7 +149,7 @@ return [
     'svc_step1_d'     => 'Complete the secure online form and upload your documents. Pay by credit/debit card — takes under 10 minutes.',
     'svc_step2_t'     => 'We Process',
     'svc_step2_d'     => 'Our team reviews and submits your application directly to Indonesia\'s immigration authority on your behalf.',
-    'svc_step3_t'     => 'Receive e-VoA',
+    'svc_step3_t'     => 'Receive Electronic Visa (E-VOA)',
     'svc_step3_d'     => 'Your approved visa is delivered to your email inbox within 24 hours. Show it on your phone at the airport.',
 
     // ─── Contact Page ───────────────────────────────────
@@ -171,7 +171,7 @@ return [
     'contact_email'    => 'Email Address',
     'contact_svc'      => 'Service Needed',
     'contact_svc_sel'  => 'Select a service…',
-    'contact_svc_1'    => 'e-Visa on Arrival (e-VoA)',
+    'contact_svc_1'    => 'Electronic Visa On Arrival (e-VoA) / B1',
     'contact_svc_2'    => 'Visa Extension',
     'contact_svc_3'    => 'Group / Family Application',
     'contact_svc_4'    => 'Business Visa Consultation',
@@ -194,7 +194,7 @@ return [
     'faq_cat_support' => 'Customer Support',
 
     'faq_q1' => 'What is Bali E Visa?',
-    'faq_a1' => 'Bali E Visa is a professional private visa processing agency that helps foreign nationals with various immigration needs in Indonesia, from Visit Visas (e-VOA), Working Visas (KITAS), to travel document extensions — with a faster and easier process.',
+    'faq_a1' => 'Bali E Visa is a professional private visa processing agency that helps foreign nationals with various immigration needs in Indonesia, from Electronic Visa On Arrival (E-VOA) and Electronic Visit Visas (C1), to Working Visas (KITAS) and travel document extensions — with a faster and easier process.',
 
     'faq_q2' => 'Is this service available for all countries?',
     'faq_a2' => 'Yes, we handle visa applications for nearly all countries worldwide. Our team will verify your documents first to determine the most suitable visa type based on your country of origin.',
@@ -396,7 +396,7 @@ return [
     // ─── Visa Page ──────────────────────────────────────
     'visa_hero_title'     => 'Visa for Bali — Made Simple',
     'visa_hero_subtitle'  => 'Choose the right visa... or <strong>risk delays, rejection,</strong> and unnecessary stress at arrival. We make sure everything is done correctly — before you fly.',
-    'visa_voa_title'      => 'Visa On Arrival (VOA)',
+    'visa_voa_title'      => 'Electronic Visa On Arrival (E-VOA) / B1',
     'visa_voa_subtitle'   => '30-Day Tourist Visa',
     'visa_voa_price'      => 'From $35 USD*',
     'visa_voa_stay_1'     => 'Initial stay: 30 days',
@@ -407,12 +407,12 @@ return [
     'visa_voa_feat_2'     => 'No pre-application needed',
     'visa_voa_feat_3'     => 'Ideal for holidays under 30 days',
     'visa_voa_feat_4'     => 'Extendable once (up to 60 days total)',
-    'visa_visit_title'    => 'Visit Visa (B211A)',
+    'visa_visit_title'    => 'Electronic Visit Visa (C1)',
     'visa_visit_subtitle' => '60-Day Tourist Visa',
     'visa_visit_price'    => 'From $80 USD*',
     'visa_visit_stay_1'   => 'Initial stay: 60 days',
     'visa_visit_stay_2'   => 'Extendable: multiple extensions (usually 2–4 times)',
-    'visa_visit_stay_3'   => 'Maximum stay: up to 180 days total (depending on approvals)',
+    'visa_visit_stay_3'   => 'Maximum stay: up to 180 days total',
     'visa_visit_best'     => 'Best for: long stay, slow travel',
     'visa_visit_feat_1'   => 'Apply before you travel',
     'visa_visit_feat_2'   => 'Stay longer without stress',

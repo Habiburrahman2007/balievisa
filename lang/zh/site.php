@@ -38,7 +38,7 @@ return [
     // ─── Quick Actions ──────────────────────────────────
     'qa_title'       => '快速入口',
     'qa_subtitle'    => '一键访问我们的核心移民服务。',
-    'qa_evoa'        => '落地电子签证',
+    'qa_evoa'        => '电子落地签证 (E-VOA)',
     'qa_evoa_d'      => '在线申请30天旅游签证。结果将在24小时内发送至您的邮箱。',
     'qa_extend'      => '签证延期',
     'qa_extend_d'    => '无需离开印度尼西亚，即可延长30天停留期。',
@@ -81,7 +81,7 @@ return [
     'faq_cat_support' => '客户支持',
 
     'faq_q1' => '什么是 Bali E Visa？',
-    'faq_a1' => 'Bali E Visa 是一家专业的私人签证办理机构，帮助外国公民处理印度尼西亚的各种移民需求，从访问签证（e-VOA）、工作签证（KITAS）到旅行证件延期——流程更快、更便捷。',
+    'faq_a1' => 'Bali E Visa 是一家专业的私人签证办理机构，帮助外国公民处理印度尼西亚的各种移民需求，从电子落地签证 (E-VOA) 和 电子访问签证 (C1) 到工作签证 (KITAS) 以及旅行证件延期——流程更快、更便捷。',
 
     'faq_q2' => '该服务是否适用于所有国家？',
     'faq_a2' => '是的，我们为全球几乎所有国家办理签证申请。我们的团队会先验证您的文件，以根据您的原籍国确定最合适的签证类型。',
@@ -209,7 +209,7 @@ return [
     // ─── Visa Page ──────────────────────────────────────
     'visa_hero_title'     => '巴厘岛签证 — 简单高效',
     'visa_hero_subtitle'  => '选择正确的签证……否则将<strong>面临延误、拒签</strong>和抵达时不必要的压力。我们确保在您起飞前正确处理一切。',
-    'visa_voa_title'      => '落地签证 (VOA)',
+    'visa_voa_title'      => '电子落地签证 (E-VOA) / B1',
     'visa_voa_subtitle'   => '30天旅游签证',
     'visa_voa_price'      => '$35 USD起*',
     'visa_voa_stay_1'     => '初始停留期：30天',
@@ -220,12 +220,12 @@ return [
     'visa_voa_feat_2'     => '无需提前申请',
     'visa_voa_feat_3'     => '适合30天以内的假期',
     'visa_voa_feat_4'     => '可延期一次（共计60天）',
-    'visa_visit_title'    => '访问签证 (B211A)',
+    'visa_visit_title'    => '电子访问签证 (C1)',
     'visa_visit_subtitle' => '60天旅游签证',
     'visa_visit_price'    => '$80 USD起*',
     'visa_visit_stay_1'   => '初始停留期：60天',
     'visa_visit_stay_2'   => '可延期：多次延期（通常2-4次）',
-    'visa_visit_stay_3'   => '最长停留期：长达180天（取决于批准）',
+    'visa_visit_stay_3'   => '最长停留期：长达180天',
     'visa_visit_best'     => '最适合：长期停留、慢节奏旅行',
     'visa_visit_feat_1'   => '起飞前完成申请',
     'visa_visit_feat_2'   => '无压力地享受更长假期',

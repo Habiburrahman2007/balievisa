@@ -38,7 +38,7 @@ return [
     // ─── Quick Actions ──────────────────────────────────
     'qa_title'       => 'Acciones rápidas',
     'qa_subtitle'    => 'Acceda a nuestros servicios migratorios principales con un solo clic.',
-    'qa_evoa'        => 'e-Visa a la llegada',
+    'qa_evoa'        => 'Visa Electrónica a la llegada (E-VOA)',
     'qa_evoa_d'      => 'Solicite una visa de turismo de 30 días en línea. Resultados enviados a su correo en 24 horas.',
     'qa_extend'      => 'Extensión de visa',
     'qa_extend_d'    => 'Extienda su estadía por 30 días adicionales sin salir de Indonesia.',
@@ -81,7 +81,7 @@ return [
     'faq_cat_support' => 'Atención al cliente',
 
     'faq_q1' => '¿Qué es Bali E Visa?',
-    'faq_a1' => 'Bali E Visa es una agencia profesional privada de tramitación de visas que ayuda a ciudadanos extranjeros con diversas necesidades migratorias en Indonesia, desde visas de visita (e-VOA), visas de trabajo (KITAS), hasta extensiones de documentos de viaje — con un proceso más rápido y sencillo.',
+    'faq_a1' => 'Bali E Visa es una agencia profesional privada de tramitación de visas que ayuda a ciudadanos extranjeros con diversas necesidades migratorias en Indonesia, desde la Visa Electrónica a la llegada (E-VOA) y la Visa de visita Electrónica (C1), hasta visas de trabajo (KITAS) y extensiones de documentos de viaje — con un proceso más rápido y sencillo.',
 
     'faq_q2' => '¿Este servicio está disponible para todos los países?',
     'faq_a2' => 'Sí, gestionamos solicitudes de visa para casi todos los países del mundo. Nuestro equipo verificará primero sus documentos para determinar el tipo de visa más adecuado según su país de origen.',
@@ -209,7 +209,7 @@ return [
     // ─── Visa Page ──────────────────────────────────────
     'visa_hero_title'     => 'Visa para Bali — Hecha Simple',
     'visa_hero_subtitle'  => 'Elija la visa adecuada... o <strong>arriesgue retrasos, rechazos</strong> y estrés innecesario al llegar. Nos aseguramos de que todo se haga correctamente, antes de volar.',
-    'visa_voa_title'      => 'Visa a la llegada (VOA)',
+    'visa_voa_title'      => 'Visa Electrónica a la llegada (E-VOA) / B1',
     'visa_voa_subtitle'   => 'Visa de turista de 30 días',
     'visa_voa_price'      => 'Desde $35 USD*',
     'visa_voa_stay_1'     => 'Estancia inicial: 30 días',
@@ -220,7 +220,7 @@ return [
     'visa_voa_feat_2'     => 'No requiere solicitud previa',
     'visa_voa_feat_3'     => 'Ideal para vacaciones de menos de 30 días',
     'visa_voa_feat_4'     => 'Se puede extender una vez (hasta 60 días total)',
-    'visa_visit_title'    => 'Visa de visita (B211A)',
+    'visa_visit_title'    => 'Visa de visita Electrónica (C1)',
     'visa_visit_subtitle' => 'Visa de turista de 60 días',
     'visa_visit_price'    => 'Desde $80 USD*',
     'visa_visit_stay_1'   => 'Estancia inicial: 60 días',
