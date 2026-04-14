@@ -17,26 +17,26 @@
 
   {{-- ═══════════════════════════════════════════ REFUND CONTENT ═══ --}}
   <section class="py-20 bg-[var(--color-bg)]">
-    <div class="max-w-[760px] mx-auto px-6">
+    <div class="max-w-[650px] mx-auto px-6">
       
       <div class="flex flex-col gap-20">
         
         {{-- Section 1: Denial --}}
         <div class="reveal">
-          <div class="flex flex-col items-center text-center mb-10">
+          <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-red-600 text-white rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-red-600/5">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
             </div>
             <h2 class="text-3xl font-extrabold text-[var(--color-navy)] tracking-tight">{{ __('site.refund_sec1_t') }}</h2>
           </div>
-          <div class="bg-white rounded-[2rem] p-10 border border-slate-200 shadow-sm border-t-4 border-t-red-500 text-center">
+          <div class="bg-white rounded-[2rem] p-10 border border-slate-200 shadow-sm border-t-4 border-t-red-500 text-left">
             <p class="text-[1.05rem] text-slate-600 leading-relaxed m-0">{{ __('site.refund_sec1_d') }}</p>
           </div>
         </div>
 
         {{-- Section 2: Non-Refundable --}}
         <div class="reveal reveal-delay-1">
-          <div class="flex flex-col items-center text-center mb-10">
+          <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-amber-500/5">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
@@ -54,20 +54,20 @@
 
         {{-- Section 3: Cancellation --}}
         <div class="reveal reveal-delay-2">
-          <div class="flex flex-col items-center text-center mb-10">
+          <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-blue-600/5">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </div>
             <h2 class="text-3xl font-extrabold text-[var(--color-navy)] tracking-tight">{{ __('site.refund_sec3_t') }}</h2>
           </div>
-          <div class="bg-white rounded-[2rem] p-10 border border-slate-200 shadow-sm border-t-4 border-t-blue-500 text-center">
+          <div class="bg-white rounded-[2rem] p-10 border border-slate-200 shadow-sm border-t-4 border-t-blue-500 text-left">
             <p class="text-[1.05rem] text-slate-600 leading-relaxed m-0">{{ __('site.refund_sec3_d') }}</p>
           </div>
         </div>
 
         {{-- Section 4: Method --}}
         <div class="reveal reveal-delay-3">
-          <div class="flex flex-col items-center text-center mb-10">
+          <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-[var(--color-navy)] text-[var(--color-gold)] rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-[var(--color-navy)]/10">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
             </div>
@@ -85,18 +85,18 @@
 
         {{-- Section 5: Timeline --}}
         <div class="reveal reveal-delay-4">
-          <div class="flex flex-col items-center text-center mb-10">
+          <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-green-600 text-white rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-green-600/5">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <h2 class="text-3xl font-extrabold text-[var(--color-navy)] tracking-tight">{{ __('site.refund_sec5_t') }}</h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white rounded-[2rem] p-10 border border-slate-200 shadow-sm flex items-center justify-center text-center">
+            <div class="bg-white rounded-[2rem] p-10 border border-slate-200 shadow-sm flex items-center justify-start text-left">
                 <p class="text-xl font-bold text-[var(--color-navy)] m-0">{{ __('site.refund_sec5_d') }}</p>
             </div>
             <div class="bg-[var(--color-navy)] rounded-[2rem] p-10 shadow-xl text-white">
-                <h3 class="text-xl font-bold mb-6 text-[var(--color-gold)] text-center sm:text-left">{{ __('site.refund_sec5_h') }}</h3>
+                <h3 class="text-xl font-bold mb-6 text-[var(--color-gold)] text-left">{{ __('site.refund_sec5_h') }}</h3>
                 <ul class="flex flex-col gap-4 list-none m-0 p-0 text-white/80">
                     <li class="flex items-start gap-4">
                         <div class="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-gold)] shrink-0"></div>
@@ -117,17 +117,17 @@
 
         {{-- Section 6: Force Majeure --}}
         <div class="reveal reveal-delay-5">
-           <div class="bg-slate-100 rounded-[2rem] p-10 border border-slate-200 text-center">
+           <div class="bg-slate-100 rounded-[2rem] p-10 border border-slate-200 text-left">
              <h3 class="text-2xl font-bold text-[var(--color-navy)] mb-4">{{ __('site.refund_sec6_t') }}</h3>
-             <p class="text-slate-500 leading-relaxed max-w-[700px] mx-auto m-0 italic">{{ __('site.refund_sec6_d') }}</p>
+             <p class="text-slate-500 leading-relaxed max-w-[700px] m-0 italic">{{ __('site.refund_sec6_d') }}</p>
            </div>
         </div>
 
       </div>
 
       {{-- Back Home --}}
-      <div class="mt-24 text-center reveal">
-        <a href="/" class="text-[var(--color-navy)] font-bold text-sm flex items-center justify-center gap-2 hover:text-[var(--color-gold)] transition-colors group">
+      <div class="mt-24 text-left reveal">
+        <a href="/" class="text-[var(--color-navy)] font-bold text-sm flex items-center justify-start gap-2 hover:text-[var(--color-gold)] transition-colors group">
           <svg class="transition-transform group-hover:-translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"/></svg>
           Back to Home
         </a>
