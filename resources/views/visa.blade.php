@@ -68,8 +68,8 @@
 
                         <div class="relative z-10">
                             <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
-                                <h3 class="text-4xl font-black text-[var(--color-navy)] mb-2 tracking-tight">
-                                    {{ __('site.visa_voa_title') }}</h3>
+                                <h2 class="text-4xl font-black text-[var(--color-navy)] mb-2 tracking-tight">
+                                    {{ __('site.visa_voa_title') }}</h2>
                                 <div class="text-blue-500 font-black uppercase tracking-[0.2em] text-[10px] mb-8">
                                     {{ __('site.visa_voa_subtitle') }}</div>
 
@@ -173,8 +173,8 @@
 
                         <div class="relative z-10">
                             <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
-                                <h3 class="text-4xl font-black text-[var(--color-navy)] mb-2 tracking-tight">
-                                    {{ __('site.visa_visit_title') }}</h3>
+                                <h2 class="text-4xl font-black text-[var(--color-navy)] mb-2 tracking-tight">
+                                    {{ __('site.visa_visit_title') }}</h2>
                                 <div class="text-green-600 font-black uppercase tracking-[0.2em] text-[10px] mb-8">
                                     {{ __('site.visa_visit_subtitle') }}</div>
 
@@ -341,7 +341,7 @@
                             class="text-4xl sm:text-5xl font-black text-[var(--color-navy)] mb-6 leading-tight tracking-tight">
                             {{ __('site.visa_diy_title') }}
                         </h2>
-                        <p class="text-slate-400 font-black text-sm uppercase tracking-[0.2em] mb-10">
+                        <p class="text-slate-600 font-black text-sm uppercase tracking-[0.2em] mb-10">
                             {{ __('site.visa_diy_subtitle') }}</p>
 
                         <p class="text-slate-700 font-bold mb-8 flex items-center gap-3">
@@ -435,13 +435,13 @@
                             {!! __('site.visa_footer_title') !!}
                         </h2>
 
-                        <p class="text-xl sm:text-2xl text-white/70 font-bold mb-16 italic font-serif leading-relaxed">
+                        <p class="text-xl sm:text-2xl text-white/80 font-bold mb-16 italic font-serif leading-relaxed">
                             {!! __('site.visa_footer_subtitle') !!}
                         </p>
 
                         <div class="inline-flex flex-col sm:flex-row items-center gap-8">
                             <a href="https://wa.me/62895330440544?text=Hi%2C%20I%E2%80%99m%20planning%20to%20travel%20to%20Bali%20and%20need%20help%20with%20my%20visa.%0ACould%20you%20assist%20me%3F"
-                                target="_blank"
+                                target="_blank" aria-label="Apply for Bali Visa on WhatsApp"
                                 class="px-16 py-7 bg-[#25D366] text-white font-black text-2xl rounded-3xl shadow-[0_20px_50px_rgba(37,211,102,0.4)] hover:bg-[#20ba5a] hover:-translate-y-2 transition-all duration-300 flex items-center gap-5 group/btn">
                                 <i
                                     class="fa-brands fa-whatsapp text-3xl group-hover/btn:rotate-12 transition-transform"></i>

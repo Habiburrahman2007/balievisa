@@ -19,6 +19,18 @@
     --color-gold-dark: #E5AC00;
     --color-bg: #F8FAFC;
     --color-bg-alt: #EEF2F7;
+
+    /* Accessibility Tokens */
+    --color-slate-muted: #576574; /* Darker than slate-400 for better contrast */
+    --color-white-muted: rgba(255, 255, 255, 0.85); /* Highly readable white-on-dark opacity */
+}
+
+@layer base {
+    /* Improve global focus visibility for keyboard users */
+    :focus-visible {
+        outline: 2px solid var(--color-gold);
+        outline-offset: 2px;
+    }
 }
 
 @layer base {

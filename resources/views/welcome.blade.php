@@ -121,7 +121,7 @@
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-gray-900 text-lg mb-1">{{ __('site.top_visa_t') }}</h3>
+              <h2 class="font-bold text-gray-900 text-lg mb-1">{{ __('site.top_visa_t') }}</h2>
               <p class="text-sm text-gray-600 leading-relaxed">{{ __('site.top_visa_d') }}</p>
             </div>
           </div>
@@ -145,7 +145,7 @@
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-gray-900 text-lg mb-1">{{ __('site.top_arrival_t') }}</h3>
+              <h2 class="font-bold text-gray-900 text-lg mb-1">{{ __('site.top_arrival_t') }}</h2>
               <p class="text-sm text-gray-600 leading-relaxed">{{ __('site.top_arrival_d') }}</p>
             </div>
           </div>
@@ -166,7 +166,7 @@
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-gray-900 text-lg mb-1">{{ __('site.top_levy_t') }}</h3>
+              <h2 class="font-bold text-gray-900 text-lg mb-1">{{ __('site.top_levy_t') }}</h2>
               <p class="text-sm text-gray-600 leading-relaxed">{{ __('site.top_levy_d') }}</p>
             </div>
           </div>
@@ -189,7 +189,7 @@
           <img src="/img/hero-bali.png" alt="Sunset" class="absolute inset-0 w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40"></div>
           <div class="relative z-10 w-full">
-            <h3 class="text-2xl font-bold mb-2">{{ __('site.dont_wait') }}</h3>
+            <h2 class="text-2xl font-bold mb-2">{{ __('site.dont_wait') }}</h2>
             <p class="text-sm text-gray-300 mb-6 w-full lg:w-4/5 leading-relaxed">{{ __('site.dont_wait_desc') }}</p>
             <a href="https://wa.me/62895330440544"
               class="inline-flex items-center gap-2 bg-yellow-400 text-slate-900 font-bold px-5 py-3 rounded-xl text-sm transition hover:bg-yellow-300">
@@ -204,7 +204,7 @@
         </div>
 
         <div class="bg-blue-50/30 rounded-3xl p-8 border border-blue-50 flex flex-col">
-          <h3 class="text-xl font-bold text-slate-800 mb-1">{{ __('site.loved_title') }}</h3>
+          <h2 class="text-xl font-bold text-slate-800 mb-1">{{ __('site.loved_title') }}</h2>
           <p class="text-sm text-slate-500 mb-6">{{ __('site.loved_desc') }}</p>
 
           <div class="grid grid-cols-3 gap-4 mt-auto">
@@ -234,7 +234,7 @@
               </div>
               <p class="text-[0.7rem] font-bold text-slate-800 mb-1">{{ __('site.review_1_title') }}</p>
               <p class="text-[0.7rem] text-slate-500 mb-3 flex-1">{{ __('site.review_1_desc') }}</p>
-              <span class="text-[0.65rem] text-slate-400">{{ __('site.review_1_author') }}</span>
+              <span class="text-[0.65rem] text-slate-600">{{ __('site.review_1_author') }}</span>
             </div>
 
             <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex flex-col">
@@ -263,7 +263,7 @@
               </div>
               <p class="text-[0.7rem] font-bold text-slate-800 mb-1">{{ __('site.review_2_title') }}</p>
               <p class="text-[0.7rem] text-slate-500 mb-3 flex-1">{{ __('site.review_2_desc') }}</p>
-              <span class="text-[0.65rem] text-slate-400">{{ __('site.review_2_author') }}</span>
+              <span class="text-[0.65rem] text-slate-600">{{ __('site.review_2_author') }}</span>
             </div>
 
             <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex flex-col">
@@ -292,7 +292,7 @@
               </div>
               <p class="text-[0.7rem] font-bold text-slate-800 mb-1">{{ __('site.review_3_title') }}</p>
               <p class="text-[0.7rem] text-slate-500 mb-3 flex-1">{{ __('site.review_3_desc') }}</p>
-              <span class="text-[0.65rem] text-slate-400">{{ __('site.review_3_author') }}</span>
+              <span class="text-[0.65rem] text-slate-600">{{ __('site.review_3_author') }}</span>
             </div>
           </div>
         </div>
@@ -321,7 +321,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
           <div class="p-6 flex flex-col flex-1">
-            <div class="text-[0.7rem] font-bold text-slate-400 mb-3 tracking-wide uppercase">
+            <div class="text-[0.7rem] font-bold text-slate-600 mb-3 tracking-wide uppercase">
               {{ $article->published_at ? $article->published_at->format('M d, Y') : $article->created_at->format('M d, Y') }}
             </div>
             <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">

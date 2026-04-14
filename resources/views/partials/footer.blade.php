@@ -17,7 +17,7 @@
           </div>
           <p class="text-sm leading-relaxed mb-6 max-w-[280px]">{{ __('site.footer_desc') }}</p>
           <div class="flex gap-4">
-            <a href="https://wa.me/62895330440544" target="_blank" rel="noopener"
+            <a href="https://wa.me/62895330440544" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp"
               class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#25D366] transition-colors">
               <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                 <path
@@ -25,7 +25,7 @@
                 </path>
               </svg>
             </a>
-            <a href="mailto:balievisabusiness@gmail.com"
+            <a href="mailto:balievisabusiness@gmail.com" aria-label="Send us an Email"
               class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-navy)] transition-colors">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -42,15 +42,15 @@
             <li><a href="/" class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_home') }}</a>
             </li>
             <li><a href="{{ route('arrival-card') }}"
-                class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_arrival') }}</a></li>
+                class="text-[14px] text-white/85 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_arrival') }}</a></li>
             <li><a href="{{ route('visa') }}"
-                class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_visa') }}</a></li>
+                class="text-[14px] text-white/85 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_visa') }}</a></li>
             <li><a href="/bali-levy"
-                class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_levy') }}</a></li>
+                class="text-[14px] text-white/85 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_levy') }}</a></li>
             <li><a href="{{ route('steps') }}"
-                class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_steps') }}</a></li>
+                class="text-[14px] text-white/85 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_steps') }}</a></li>
             <li><a href="{{ route('news') }}"
-                class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_news') }}</a></li>
+                class="text-[14px] text-white/85 hover:text-[var(--color-gold)] transition-colors">{{ __('site.nav_news') }}</a></li>
           </ul>
         </div>
 
@@ -59,13 +59,13 @@
           <div class="text-[13px] font-bold text-white mb-5 uppercase tracking-wide">{{ __('site.footer_legal') }}</div>
           <ul class="flex flex-col gap-2.5 list-none">
             <li><a href="{{ route('privacy-policy') }}"
-                class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_privacy') }}</a>
+                class="text-[14px] text-white/85 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_privacy') }}</a>
             </li>
             <li><a href="{{ route('terms-and-conditions') }}"
-                class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_terms') }}</a>
+                class="text-[14px] text-white/85 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_terms') }}</a>
             </li>
             <li><a href="{{ route('refund-policy') }}"
-                class="text-[14px] text-white/60 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_refund') }}</a>
+                class="text-[14px] text-white/85 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_refund') }}</a>
             </li>
           </ul>
         </div>
@@ -106,11 +106,11 @@
       <span class="text-[13px]">{{ __('site.footer_copyright') }}</span>
       <div class="flex gap-5">
         <a href="{{ route('privacy-policy') }}"
-          class="text-[13px] text-white/50 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_privacy') }}</a>
+          class="text-[13px] text-white/80 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_privacy') }}</a>
         <a href="{{ route('terms-and-conditions') }}"
-          class="text-[13px] text-white/50 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_terms') }}</a>
+          class="text-[13px] text-white/80 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_terms') }}</a>
         <a href="{{ route('refund-policy') }}"
-          class="text-[13px] text-white/50 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_refund') }}</a>
+          class="text-[13px] text-white/80 hover:text-[var(--color-gold)] transition-colors">{{ __('site.footer_refund') }}</a>
       </div>
     </div>
   </div>

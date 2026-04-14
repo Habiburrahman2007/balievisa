@@ -19,7 +19,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
           </div>
           <div class="p-7 flex flex-col flex-1">
-            <div class="flex items-center gap-2 text-[0.75rem] font-semibold text-slate-400 mb-4 tracking-wide uppercase">
+            <div class="flex items-center gap-2 text-[0.75rem] font-semibold text-slate-600 mb-4 tracking-wide uppercase">
               <span>{{ $article->published_at ? $article->published_at->format('F d, Y') : $article->created_at->format('F d, Y') }}</span>
             </div>
             <h2 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">{{ $article->title }}</h2>

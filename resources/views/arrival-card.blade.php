@@ -78,7 +78,7 @@
                     <!-- CTA -->
                     <div class="flex flex-col items-center gap-6">
                         <a href="https://wa.me/62895330440544?text=Hi%2C%20I%E2%80%99m%20traveling%20to%20Bali%20soon%20and%20need%20help%20with%20my%20Arrival%20Card.%0ACould%20you%20assist%20me%3F"
-                            target="_blank"
+                            target="_blank" aria-label="Chat on WhatsApp for help with Arrival Card"
                             class="w-full sm:w-auto px-12 py-5 bg-[var(--color-gold)] text-[var(--color-navy)] font-black rounded-xl shadow-2xl shadow-[var(--color-gold)]/20 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 group">
                             <i class="fa-brands fa-whatsapp text-xl"></i>
                             {{ __('site.arrival_hero_cta') }}
@@ -93,7 +93,7 @@
                                     class="w-10 h-10 rounded-full border-2 border-[var(--color-navy)] shadow-sm" alt="User">
                             </div>
                             <div class="text-sm">
-                                <div class="font-bold text-white/60 leading-none italic uppercase tracking-tighter">
+                                <div class="font-bold text-white/80 leading-none italic uppercase tracking-tighter">
                                     {{ __('site.arrival_hero_trusted') }}</div>
                             </div>
                         </div>
@@ -342,7 +342,7 @@
                             <h2 class="text-3xl font-black text-white leading-tight mb-4 tracking-tight">
                                 {!! __('site.arrival_timer_slots') !!}
                             </h2>
-                            <p class="text-white/60 text-base leading-relaxed mb-6">
+                            <p class="text-white/80 text-base leading-relaxed mb-6">
                                 {{ __('site.arrival_timer_desc') }}
                             </p>
                             <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10 w-fit">
@@ -411,7 +411,7 @@
                                         class="text-slate-600 font-black text-2xl mb-4">{{ __('site.arrival_price_title') }}</span>
                                     <span
                                         class="text-[6rem] leading-none font-black text-[var(--color-navy)] tracking-tighter">{{ __('site.arrival_price_amount') }}</span>
-                                    <span class="text-slate-400 font-bold text-xl">{{ __('site.arrival_price_per') }}</span>
+                                    <span class="text-slate-600 font-bold text-xl">{{ __('site.arrival_price_per') }}</span>
                                 </div>
 
                                 <ul class="space-y-6 mb-12">
@@ -441,7 +441,7 @@
                                     </li>
                                 </ul>
 
-                                <a href="https://wa.me/{{ config('site.whatsapp_number') }}" target="_blank"
+                                <a href="https://wa.me/{{ config('site.whatsapp_number') }}" target="_blank" aria-label="Inquire about Arrival Card pricing on WhatsApp"
                                     class="block w-full text-center py-6 bg-[var(--color-navy)] text-white font-black rounded-2xl shadow-xl shadow-[var(--color-navy)]/10 hover:bg-[var(--color-navy-dark)] hover:scale-[1.02] transition-all duration-300 group">
                                     {{ __('site.arrival_price_cta') }}
                                     <i
@@ -553,9 +553,9 @@
                             @for($i = 0; $i < 5; $i++) <i class="fa-solid fa-star text-[var(--color-gold)] text-[10px]"></i>
                             @endfor
                         </div>
-                        <h5
+                        <h3
                             class="text-base font-black text-[var(--color-navy)] mb-4 leading-tight group-hover:text-[var(--color-gold)] transition-colors italic">
-                            "{{ __('site.review_4_title') }}"</h5>
+                            "{{ __('site.review_4_title') }}"</h3>
                         <p class="text-slate-600 text-sm leading-relaxed mb-10 opacity-80">{{ __('site.review_4_desc') }}
                         </p>
                         <div class="flex items-center gap-4 pt-6 border-t border-slate-200/60">
@@ -565,7 +565,7 @@
                             <div>
                                 <div class="font-black text-[var(--color-navy)] text-sm tracking-tight">
                                     {{ __('site.review_4_author') }}</div>
-                                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Verified
+                                <div class="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Verified
                                     Traveler</div>
                             </div>
                         </div>
@@ -578,9 +578,9 @@
                             @for($i = 0; $i < 5; $i++) <i class="fa-solid fa-star text-[var(--color-gold)] text-[10px]"></i>
                             @endfor
                         </div>
-                        <h5
+                        <h3
                             class="text-base font-black text-[var(--color-navy)] mb-4 leading-tight group-hover:text-[var(--color-gold)] transition-colors italic">
-                            "{{ __('site.review_5_title') }}"</h5>
+                            "{{ __('site.review_5_title') }}"</h3>
                         <p class="text-slate-600 text-sm leading-relaxed mb-10 opacity-80">{{ __('site.review_5_desc') }}
                         </p>
                         <div class="flex items-center gap-4 pt-6 border-t border-slate-200/60">
@@ -590,7 +590,7 @@
                             <div>
                                 <div class="font-black text-[var(--color-navy)] text-sm tracking-tight">
                                     {{ __('site.review_5_author') }}</div>
-                                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Verified
+                                <div class="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Verified
                                     Traveler</div>
                             </div>
                         </div>
@@ -603,9 +603,9 @@
                             @for($i = 0; $i < 5; $i++) <i class="fa-solid fa-star text-[var(--color-gold)] text-[10px]"></i>
                             @endfor
                         </div>
-                        <h5
+                        <h3
                             class="text-base font-black text-[var(--color-navy)] mb-4 leading-tight group-hover:text-[var(--color-gold)] transition-colors italic">
-                            "{{ __('site.review_6_title') }}"</h5>
+                            "{{ __('site.review_6_title') }}"</h3>
                         <p class="text-slate-600 text-sm leading-relaxed mb-10 opacity-80">{{ __('site.review_6_desc') }}
                         </p>
                         <div class="flex items-center gap-4 pt-6 border-t border-slate-200/60">
@@ -615,7 +615,7 @@
                             <div>
                                 <div class="font-black text-[var(--color-navy)] text-sm tracking-tight">
                                     {{ __('site.review_6_author') }}</div>
-                                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Verified
+                                <div class="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Verified
                                     Traveler</div>
                             </div>
                         </div>
@@ -640,7 +640,7 @@
                     {{ __('site.arrival_cta_subtitle') }}
                 </p>
 
-                <a href="https://wa.me/{{ config('site.whatsapp_number') }}" target="_blank"
+                <a href="https://wa.me/{{ config('site.whatsapp_number') }}" target="_blank" aria-label="Start application on WhatsApp"
                     class="inline-flex items-center gap-4 px-12 py-6 bg-[#25D366] text-white font-black rounded-2xl shadow-2xl hover:bg-[#20ba5a] hover:-translate-y-2 transition-all duration-300 group">
                     <i class="fa-brands fa-whatsapp text-2xl"></i>
                     {{ __('site.arrival_cta_btn') }}

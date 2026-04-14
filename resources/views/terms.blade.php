@@ -31,7 +31,7 @@
           </div>
           <div class="bg-white rounded-[2rem] p-10 border border-slate-200 shadow-sm space-y-5 text-left">
             <p class="text-[1.05rem] text-slate-600 leading-relaxed m-0">{{ __('site.terms_sec1_d1') }}</p>
-            <p class="text-sm text-slate-400 leading-relaxed font-semibold italic m-0">{{ __('site.terms_sec1_d2') }}</p>
+            <p class="text-sm text-slate-600 leading-relaxed font-semibold italic m-0">{{ __('site.terms_sec1_d2') }}</p>
           </div>
         </div>
 
@@ -84,7 +84,7 @@
           <div class="bg-white rounded-[2rem] p-10 border border-slate-200 shadow-sm space-y-6 text-left">
             <p class="text-[1.05rem] text-slate-600 leading-relaxed m-0">{{ __('site.terms_sec4_d1') }}</p>
             <div class="pt-6 border-t border-slate-100">
-               <p class="text-sm text-slate-400 italic m-0">{{ __('site.terms_sec4_d2') }}</p>
+               <p class="text-sm text-slate-600 italic m-0">{{ __('site.terms_sec4_d2') }}</p>
             </div>
           </div>
         </div>

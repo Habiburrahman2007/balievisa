@@ -16,7 +16,7 @@
         @endif
 
         <div class="p-8 md:p-12">
-          <div class="flex items-center gap-2 text-sm font-semibold text-slate-400 mb-6 tracking-wide uppercase">
+          <div class="flex items-center gap-2 text-sm font-semibold text-slate-600 mb-6 tracking-wide uppercase">
             <span>{{ $article->published_at ? $article->published_at->format('F d, Y') : $article->created_at->format('F d, Y') }}</span>
           </div>
           
