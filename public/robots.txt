@@ -3,4 +3,4 @@ Disallow: /admin
 Disallow: /login
 Disallow: /register
 
-Sitemap: https://balievisa.com/sitemap.xml
+Sitemap: https://balievisaindonesia.com/sitemap.xml
