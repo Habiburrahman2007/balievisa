@@ -17,7 +17,7 @@
 
   {{-- ═══════════════════════════════════════════ PRIVACY CONTENT ═══ --}}
   <section class="py-20 bg-[var(--color-bg)]">
-    <div class="max-w-[850px] mx-auto px-6">
+    <div class="max-w-[760px] mx-auto px-6">
       
       <div class="flex flex-col gap-20">
         
