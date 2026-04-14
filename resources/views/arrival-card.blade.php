@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
-@section('title', __('site.nav_arrival') . ' - ' . config('app.name'))
+@section('title', 'Indonesia Arrival Card & Custom Declaration (e-CD) Made Simple')
+@section('meta_description', 'Complete your Indonesia Arrival Card and Custom Declaration (e-CD) correctly. Fast assistance to avoid immigration delays at Bali airport.')
+@section('meta_keywords', 'Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Airport Immigration, Health Pass Indonesia, Bali Travel Requirements')
+
+@section('structured_data')
+{
+  "@type": "Service",
+  "@id": "{{ url('/arrival-card') }}/#service",
+  "name": "Indonesia Arrival Card Assistance",
+  "serviceType": "Travel Document Assistance",
+  "provider": {
+    "@id": "{{ url('/') }}/#organization"
+  },
+  "areaServed": "Indonesia",
+  "description": "Expert assistance for completing the mandatory Indonesia Arrival Card and Electronic Customs Declaration (e-CD)."
+}
+@endsection
 
 @section('content')
     <div class="arrival-card-page overflow-x-hidden">

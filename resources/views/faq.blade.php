@@ -1,5 +1,33 @@
 @extends('layouts.app')
 
+@section('title', 'Bali E-Visa FAQ | Frequently Asked Questions about Immigration')
+@section('meta_description', 'Find answers to common questions about Indonesia e-Visa on Arrival, Bali Tourist Levy, and Arrival Card requirements.')
+@section('meta_keywords', 'Bali E-Visa FAQ, Indonesia Visa Questions, Bali Immigration Help, Visa on Arrival Bali Questions, Bali E-Visa Assistance')
+
+@section('structured_data')
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Bali E Visa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bali E Visa is a professional private visa processing agency that helps foreign nationals with various immigration needs in Indonesia, from Electronic Visa On Arrival (E-VOA) and Electronic Visit Visas (C1), to Working Visas (KITAS)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I track my visa status?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After your documents are processed, our team will send you an application reference number. You can inquire about progress directly with our support team through the available contact channels."
+      }
+    }
+  ]
+}
+@endsection
+
 @section('content')
   {{-- ═══════════════════════════════════════════ FAQ HERO ═══ --}}
   <section class="relative bg-gradient-to-br from-[var(--color-navy)] via-[var(--color-navy-light)] to-[var(--color-navy)] py-20 overflow-hidden">

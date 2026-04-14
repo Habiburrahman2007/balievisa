@@ -4,8 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ __('site.nav_portal') }} | {{ __('site.nav_portal_sub') }}</title>
-  <meta name="description" content="{{ __('site.hero_subtitle') }}">
+  
+  {{-- ─── SEO Metadata ─────────────────────────────────── --}}
+  <title>@yield('title', __('site.nav_portal') . ' | ' . __('site.nav_portal_sub'))</title>
+  <meta name="description" content="@yield('meta_description', __('site.hero_subtitle'))">
+  <meta name="keywords" content="@yield('meta_keywords', 'Indonesia e-Visa on Arrival, e-VOA, Apply Visa for Bali, Bali Tourist Levy, Fast Bali Visa Service, Bali Visa Consultation, Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Immigration Rules')">
+  <link rel="canonical" href="{{ url()->current() }}">
+
+  {{-- ─── Open Graph / Facebook ────────────────────────── --}}
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ url()->current() }}">
+  <meta property="og:title" content="@yield('title', __('site.nav_portal'))">
+  <meta property="og:description" content="@yield('meta_description', __('site.hero_subtitle'))">
+  <meta property="og:image" content="{{ asset('images/bali_preview_website.jpg') }}">
+
+  {{-- ─── Twitter ──────────────────────────────────────── --}}
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ url()->current() }}">
+  <meta property="twitter:title" content="@yield('title', __('site.nav_portal'))">
+  <meta property="twitter:description" content="@yield('meta_description', __('site.hero_subtitle'))">
+  <meta property="twitter:image" content="{{ asset('images/bali_preview_website.jpg') }}">
+
+  {{-- ─── Multilingual ─────────────────────────────────── --}}
+  <link rel="alternate" hreflang="en" href="{{ url()->current() }}?lang=en">
+  <link rel="alternate" hreflang="zh" href="{{ url()->current() }}?lang=zh">
+  <link rel="alternate" hreflang="es" href="{{ url()->current() }}?lang=es">
+  <link rel="alternate" hreflang="ar" href="{{ url()->current() }}?lang=ar">
+  <link rel="alternate" hreflang="hi" href="{{ url()->current() }}?lang=hi">
+  <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -19,6 +46,12 @@
   <link rel="stylesheet" href="/css/welcome.css">
   <link rel="icon" type="image/png" href="{{ asset('images/logo-visa.png') }}">
   <meta name="google-site-verification" content="v3a4GIxrzeL_-CREGIxh637YuJXf8SUANTbLrCCQ45c" />
+  
+  {{-- ─── Extra Header Content ─────────────────────────── --}}
+  @yield('head_extra')
+
+  @include('partials.seo')
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9S0JHC6XS"></script>
   <script>

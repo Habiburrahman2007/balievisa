@@ -1,5 +1,23 @@
 @extends('layouts.app')
 
+@section('title', 'Bali Tourist Levy Payment | Official Contribution for Bali Protection')
+@section('meta_description', 'Pay your mandatory Bali International Tourist Levy online. Secure payment for Bali nature and culture preservation. Instant QR code delivery.')
+@section('meta_keywords', 'Bali Tourist Levy Payment, International Tourist Levy Bali, Bali Environment Contribution, Pay Bali Tax, Bali Tourism Fee')
+
+@section('structured_data')
+{
+  "@type": "Service",
+  "@id": "{{ url('/bali-levy') }}/#service",
+  "name": "Bali Tourist Levy Payment Assistance",
+  "serviceType": "Tax/Levy Payment Service",
+  "provider": {
+    "@id": "{{ url('/') }}/#organization"
+  },
+  "areaServed": "Bali, Indonesia",
+  "description": "Secure online processing for the International Tourist Levy required for all visitors to Bali."
+}
+@endsection
+
 @section('content')
 
   {{-- Hero Header --}}

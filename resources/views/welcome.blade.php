@@ -1,5 +1,19 @@
 @extends('layouts.app')
 
+@section('title', 'Indonesia e-Visa on Arrival (e-VOA) | Apply Visa for Bali & Tourist Levy')
+@section('meta_description', 'Official Bali E-Visa Portal. Fast Bali Visa Service & Consultation. Apply for Indonesia e-Visa on Arrival (e-VOA), Bali Tourist Levy Payment, and Indonesia Arrival Card.')
+@section('meta_keywords', 'Indonesia e-Visa on Arrival, e-VOA, Apply Visa for Bali, Bali Tourist Levy Payment, Fast Bali Visa Service, Bali Visa Consultation, Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Visa on Arrival Requirements, Electronic Visa Indonesia, Bali Immigration Rules')
+
+@section('structured_data')
+{
+  "@type": "WebPage",
+  "@id": "{{ url('/') }}/#webpage",
+  "url": "{{ url('/') }}",
+  "name": "Bali E-Visa Portal - Official Assistance",
+  "description": "Fast and reliable assistance for Indonesia e-Visa on Arrival, Bali Tourist Levy, and Arrival Card submissions."
+}
+@endsection
+
 @section('content')
   {{-- ═══════════════════════════════════════════ HERO ═══ --}}
   <section id="hero" class="relative min-h-[85vh] flex items-center overflow-hidden bg-[var(--color-navy)]">

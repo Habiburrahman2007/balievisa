@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
-@section('title', __('site.nav_visa') . ' - ' . config('app.name'))
+@section('title', 'Apply Visa for Bali | Indonesia e-Visa on Arrival (e-VOA) Requirements')
+@section('meta_description', 'Official guide for Indonesia e-Visa on Arrival (e-VOA) and Visit Visa (C1). Get expert Bali Visa Consultation and fast processing for your trip to Indonesia.')
+@section('meta_keywords', 'Apply Visa for Bali, Indonesia e-Visa on Arrival, e-VOA, Bali Visa on Arrival Requirements, Electronic Visa Indonesia, Bali Immigration Rules, Bali Visa Consultation, Fast Bali Visa Service')
+
+@section('structured_data')
+{
+  "@type": "Service",
+  "@id": "{{ url('/visa') }}/#service",
+  "name": "Indonesia e-Visa on Arrival (e-VOA) Assistance",
+  "serviceType": "Visa Consultation",
+  "provider": {
+    "@id": "{{ url('/') }}/#organization"
+  },
+  "areaServed": "Indonesia",
+  "description": "Professional assistance for obtaining Indonesia Electronic Visa on Arrival (e-VOA) and Visit Visas (C1)."
+}
+@endsection
 
 @section('content')
     <div class="visa-page overflow-x-hidden">
