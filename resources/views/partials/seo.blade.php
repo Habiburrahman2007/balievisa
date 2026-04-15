@@ -20,7 +20,7 @@
     }
     @hasSection('structured_data')
       ,@yield('structured_data')
-    @endif
+    @endhasSection
   ]
 }
 </script>
