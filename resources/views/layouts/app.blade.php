@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
-  
+
   {{-- ─── SEO Metadata ─────────────────────────────────── --}}
   <title>@yield('title', __('site.nav_portal') . ' | ' . __('site.nav_portal_sub'))</title>
   <meta name="description" content="@yield('meta_description', __('site.hero_subtitle'))">
-  <meta name="keywords" content="@yield('meta_keywords', 'Indonesia e-Visa on Arrival, e-VOA, Apply Visa for Bali, Bali Tourist Levy, Fast Bali Visa Service, Bali Visa Consultation, Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Immigration Rules')">
+  <meta name="keywords"
+    content="@yield('meta_keywords', 'Indonesia e-Visa on Arrival, e-VOA, Apply Visa for Bali, Bali Tourist Levy, Fast Bali Visa Service, Bali Visa Consultation, Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Immigration Rules')">
   <link rel="canonical" href="{{ url()->current() }}">
 
   {{-- ─── Open Graph / Facebook ────────────────────────── --}}
@@ -46,11 +47,9 @@
   <link rel="stylesheet" href="/css/welcome.css">
   <link rel="icon" type="image/png" href="{{ asset('images/logo-visa.png') }}">
   <meta name="google-site-verification" content="v3a4GIxrzeL_-CREGIxh637YuJXf8SUANTbLrCCQ45c" />
-  
+
   {{-- ─── Extra Header Content ─────────────────────────── --}}
   @yield('head_extra')
-
-  @include('partials.seo')
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9S0JHC6XS"></script>
