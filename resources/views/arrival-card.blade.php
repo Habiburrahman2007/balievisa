@@ -624,6 +624,40 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
+        <section class="py-24 bg-slate-50 px-6 relative z-10 border-t border-slate-200/50">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 bg-[var(--color-navy)]/5 border border-[var(--color-navy)]/10 text-[var(--color-navy)] px-4 py-1.5 rounded-full text-[0.8rem] font-bold tracking-wider uppercase mb-5">
+                        <i class="fa-solid fa-circle-question"></i> FAQ
+                    </div>
+                    <h2 class="text-4xl sm:text-5xl font-black text-[var(--color-navy)] mb-4 tracking-tight">{{ __('site.arrival_faq_title') }}</h2>
+                    <p class="text-slate-500 font-bold text-lg">{{ __('site.arrival_faq_subtitle') }}</p>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    @for($i = 10; $i <= 15; $i++)
+                    <div data-faq class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all hover:border-[var(--color-navy)]/30 hover:shadow-lg shadow-sm group/faq">
+                        <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer group">
+                            <span class="flex items-start gap-4">
+                                <span class="text-[0.85rem] font-black text-[var(--color-gold)] bg-[var(--color-gold)]/10 w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">{{ $i - 9 }}</span>
+                                <span class="text-base sm:text-lg font-bold text-slate-800 group-hover:text-[var(--color-navy)] transition-colors pr-4">{!! __('site.visa_faq_q' . $i) !!}</span>
+                            </span>
+                            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors border border-slate-100 group-hover/faq:border-blue-100">
+                                <svg class="faq-chevron w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </div>
+                        </button>
+                        <div class="faq-a px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300">
+                            <div class="pb-6 text-slate-600 text-[0.95rem] leading-relaxed border-t border-slate-100 pt-5">
+                                {!! __('site.visa_faq_a' . $i) !!}
+                            </div>
+                        </div>
+                    </div>
+                    @endfor
+                </div>
+            </div>
+        </section>
+
         <!-- Footer CTA -->
         <section class="relative py-32 px-6 overflow-hidden">
             <div class="absolute inset-0 z-0">
