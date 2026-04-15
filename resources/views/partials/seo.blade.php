@@ -1,4 +1,3 @@
-{{-- ─── JSON-LD Structured Data ────────────────────────── --}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,7 +33,10 @@
         "@id": "{{ url('/') }}/#organization"
       },
       "inLanguage": "{{ app()->getLocale() }}"
-    }@if(trim($__env->yieldContent('structured_data'))),@yield('structured_data')@endif
+    }
+    @if(trim($__env->yieldContent('structured_data')))
+      ,@yield('structured_data')
+    @endif
   ]
 }
 </script>
