@@ -22,8 +22,8 @@
           </div>
         </a>
 
-        {{-- Desktop Menu intentionally hidden; mobile overlay still provides navigation links. --}}
-        <ul class="hidden items-center gap-8 xl:gap-12">
+        {{-- Desktop Menu --}}
+        <ul class="hidden md:flex items-center gap-8 xl:gap-12">
           <li>
             <a href="/"
               class="text-[0.9rem] {{ request()->is('/') ? 'font-bold text-[var(--color-navy)] border-b-2 border-[var(--color-gold)]' : 'font-semibold text-slate-600 hover:text-[var(--color-navy)] border-b-2 border-transparent hover:border-[var(--color-gold)]' }} transition-all pb-1">{{ __('site.nav_home') }}</a>
@@ -55,7 +55,7 @@
       <div class="flex items-center gap-3">
         {{-- Mobile Toggle --}}
         <button id="mobile-toggle"
-          class="md:hidden flex items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
+          class="flex lg:hidden items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
           aria-label="Toggle menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
@@ -101,7 +101,7 @@
 
         {{-- Help Button --}}
         <a href="/faq"
-          class="hidden md:inline-flex shrink-0 whitespace-nowrap items-center gap-2 bg-[var(--color-navy)] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,43,91,0.35)] shadow-[0_4px_12px_rgba(0,43,91,0.2)]">
+          class="inline-flex shrink-0 whitespace-nowrap items-center gap-2 bg-[var(--color-navy)] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,43,91,0.35)] shadow-[0_4px_12px_rgba(0,43,91,0.2)]">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 18v-6a9 9 0 0 1 18 0v6" />

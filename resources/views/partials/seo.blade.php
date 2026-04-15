@@ -34,8 +34,7 @@
         "@id": "{{ url('/') }}/#organization"
       },
       "inLanguage": "{{ app()->getLocale() }}"
-    },
-    @yield('structured_data')
+    }@if(trim($__env->yieldContent('structured_data'))),@yield('structured_data')@endif
   ]
 }
 </script>
