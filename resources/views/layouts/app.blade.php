@@ -65,8 +65,8 @@
   <!-- Structured Data: Organization Logo -->
   <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
+      "@@context": "https://schema.org",
+      "@@type": "Organization",
       "url": "{{ url('/') }}",
       "logo": "{{ asset('images/logo-visa.png') }}"
     }
