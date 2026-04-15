@@ -6,22 +6,31 @@
 
 @section('structured_data')
 {
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is Bali E Visa?",
+      "name": "How long does the arrival process take in Bali?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bali E Visa is a professional private visa processing agency that helps foreign nationals with various immigration needs in Indonesia, from Electronic Visa On Arrival (E-VOA) and Electronic Visit Visas (C1), to Working Visas (KITAS)."
+        "text": "Without preparation: Immigration: 2–3 hours, Baggage: 30–60 minutes, Customs: 30–60 minutes. Total: 3–5 hours after landing."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I track my visa status?",
+      "name": "Can I really avoid long queues?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "After your documents are processed, our team will send you an application reference number. You can inquire about progress directly with our support team through the available contact channels."
+        "text": "Yes, with proper preparation (eVOA + forms completed), you can significantly reduce waiting time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I use your service instead of doing it myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because small mistakes can cost hours at the airport. We ensure: Everything is done correctly, No confusion, Faster arrival experience, Peace of mind before travel."
       }
     }
   ]
@@ -49,10 +58,9 @@
 
       @php
         $categories = [
-          ['key' => 'general', 'icon' => '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>', 'items' => [1,2,3,4]],
-          ['key' => 'account', 'icon' => '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>', 'items' => [5,6,7]],
-          ['key' => 'process', 'icon' => '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>', 'items' => [8,9,10]],
-          ['key' => 'support', 'icon' => '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>', 'items' => [11,12]],
+          ['key' => 'airport', 'icon' => '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>', 'items' => [21,22]],
+          ['key' => 'service', 'icon' => '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>', 'items' => [23,24,25,26,27]],
+          ['key' => 'trigger', 'icon' => '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>', 'items' => [28]],
         ];
       @endphp
 
@@ -69,7 +77,7 @@
           {{-- Accordion Items --}}
           <div class="flex flex-col gap-3">
             @foreach($cat['items'] as $num)
-              <div data-faq class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all hover:border-[var(--color-navy)]/20">
+              <div data-faq class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all hover:border-[var(--color-navy)]/20 shadow-sm hover:shadow-md">
                 <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-4 text-left cursor-pointer group">
                   <span class="flex items-center gap-3">
                     <span class="text-[0.78rem] font-bold text-[var(--color-gold)] bg-[var(--color-gold)]/10 w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0">{{ $num }}</span>

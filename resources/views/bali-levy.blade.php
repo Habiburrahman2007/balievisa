@@ -191,8 +191,8 @@
   </section>
 
   {{-- FAQ Section --}}
-  <section class="py-24 bg-slate-50 border-t border-slate-200/50">
-    <div class="max-w-[1000px] mx-auto px-6">
+  <section class="py-24 bg-slate-50 relative z-10 border-t border-slate-200/50">
+    <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <div class="inline-flex items-center gap-2 bg-[var(--color-navy)]/5 border border-[var(--color-navy)]/10 text-[var(--color-navy)] px-4 py-1.5 rounded-full text-[0.8rem] font-bold tracking-wider uppercase mb-5">
             <i class="fa-solid fa-circle-question"></i> FAQ
@@ -201,7 +201,7 @@
         <p class="text-slate-500 font-bold text-lg">{{ __('site.levy_faq_subtitle') }}</p>
       </div>
 
-      <div class="flex flex-col gap-4">
+      <div class="max-w-4xl mx-auto flex flex-col gap-4">
         @for($i = 16; $i <= 20; $i++)
         <div data-faq class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all hover:border-[var(--color-navy)]/30 hover:shadow-lg shadow-sm group/faq">
             <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer group">
