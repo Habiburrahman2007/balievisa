@@ -8,21 +8,24 @@
     'hi' => ['label' => 'हिन्दी', 'flag' => '🇮🇳'],
   ];
 @endphp
+
 <nav id="main-navbar" class="sticky top-0 z-50 bg-white border-b border-slate-200 transition-all duration-300">
   <div class="max-w-[1200px] mx-auto px-6">
     <div class="flex items-center justify-between h-[68px] gap-6">
+
       <div class="flex items-center gap-10 h-full">
         {{-- Logo --}}
         <a href="/" class="flex items-center gap-3 shrink-0" id="logo" aria-label="Bali E Visa Home">
           <img src="/images/logo-visa.png" class="w-12 h-12 object-contain" alt="Bali E Visa Logo">
           <div class="flex flex-col">
             <span class="font-bold text-base text-[var(--color-navy)] leading-tight">Bali E Visa</span>
-            <span
-              class="text-[0.65rem] text-slate-600 font-medium leading-tight hidden sm:block">{{ __('site.nav_portal') }}</span>
+            <span class="text-[0.65rem] text-slate-600 font-medium leading-tight hidden sm:block">
+              {{ __('site.nav_portal') }}
+            </span>
           </div>
         </a>
 
-        {{-- Desktop Menu --}}
+        {{-- Desktop Menu: Muncul hanya di LG ke atas --}}
         <ul class="hidden lg:flex items-center gap-8 xl:gap-12">
           <li>
             <a href="/"
@@ -51,12 +54,12 @@
         </ul>
       </div>
 
-      {{-- Right-side: Language Dropdown + Help + Mobile Toggle --}}
+      {{-- Right-side --}}
       <div class="flex items-center gap-3">
-        {{-- Mobile Toggle --}}
+
+        {{-- Mobile Toggle: DIPERBAIKI (Tambah lg:hidden, hapus inline style) --}}
         <button id="mobile-toggle"
-          class="flex items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
-          style="display:flex"
+          class="flex lg:hidden items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
           aria-label="Toggle menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
@@ -66,7 +69,7 @@
           </svg>
         </button>
 
-        {{-- Language Dropdown --}}
+        {{-- Language Dropdown: Sembunyi di mobile, muncul di MD ke atas --}}
         <div class="relative hidden md:block" id="lang-dropdown-wrap">
           <button id="lang-dropdown-btn" type="button" aria-label="Select Language"
             class="inline-flex items-center gap-1.5 bg-slate-100 text-[var(--color-navy)] text-sm font-semibold px-4 py-2.5 rounded-full transition-all hover:bg-slate-200 cursor-pointer">
@@ -82,6 +85,7 @@
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </button>
+
           <div id="lang-dropdown-menu"
             class="absolute right-0 top-full mt-2 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 opacity-0 pointer-events-none scale-95 transition-all duration-200 origin-top-right z-50">
             @foreach($langs as $code => $info)
@@ -115,12 +119,11 @@
     </div>
   </div>
 
-  {{-- Mobile Navigation Overlay --}}
-  <div id="nav-links" class="hidden">
-    {{-- Close Button --}}
-    <button class="absolute top-6 right-6 text-white text-3xl transition-all hover:text-[var(--color-gold)] cursor-pointer" 
-            onclick="document.getElementById('nav-links').classList.remove('open')"
-            aria-label="Close menu">
+  {{-- Mobile Navigation Overlay: DIPERBAIKI (Tambah lg:hidden) --}}
+  <div id="nav-links" class="hidden lg:hidden">
+    <button
+      class="absolute top-6 right-6 text-white text-3xl transition-all hover:text-[var(--color-gold)] cursor-pointer"
+      onclick="document.getElementById('nav-links').classList.remove('open')" aria-label="Close menu">
       <i class="fas fa-times"></i>
     </button>
 
@@ -136,19 +139,20 @@
     {{-- Language Selector in Mobile --}}
     <div class="flex flex-wrap justify-center gap-3 py-2 px-6">
       @foreach($langs as $code => $info)
-        <a href="{{ route('locale.switch', $code) }}" 
-           class="flex items-center gap-2 text-xs px-3 py-2 rounded-lg {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)] font-bold' : 'bg-white/10 text-white' }} transition-colors">
-           <span class="text-base">{{ $info['flag'] }}</span>
-           <span>{{ strtoupper($code) }}</span>
+        <a href="{{ route('locale.switch', $code) }}"
+          class="flex items-center gap-2 text-xs px-3 py-2 rounded-lg {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)] font-bold' : 'bg-white/10 text-white' }} transition-colors">
+          <span class="text-base">{{ $info['flag'] }}</span>
+          <span>{{ strtoupper($code) }}</span>
         </a>
       @endforeach
     </div>
 
-    {{-- Help Button in Mobile --}}
-    <a href="/faq" class="mt-6 !bg-white !text-[var(--color-navy)] !text-sm px-8 py-3 rounded-full flex items-center gap-2 font-bold shadow-lg">
+    <a href="/faq"
+      class="mt-6 !bg-white !text-[var(--color-navy)] !text-sm px-8 py-3 rounded-full flex items-center gap-2 font-bold shadow-lg">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+        <path
+          d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
       </svg>
       <span>{{ __('site.nav_help') }}</span>
     </a>
