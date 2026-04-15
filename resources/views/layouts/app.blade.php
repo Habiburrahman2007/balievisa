@@ -46,6 +46,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/css/welcome.css">
   <link rel="icon" type="image/png" href="{{ asset('images/logo-visa.png') }}">
+  <link rel="apple-touch-icon" href="{{ asset('images/logo-visa.png') }}">
   <meta name="google-site-verification" content="v3a4GIxrzeL_-CREGIxh637YuJXf8SUANTbLrCCQ45c" />
 
   {{-- ─── Extra Header Content ─────────────────────────── --}}
@@ -59,6 +60,16 @@
     gtag('js', new Date());
 
     gtag('config', 'G-W9S0JHC6XS');
+  </script>
+
+  <!-- Structured Data: Organization Logo -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "{{ url('/') }}",
+      "logo": "{{ asset('images/logo-visa.png') }}"
+    }
   </script>
 </head>
 
