@@ -298,3 +298,12 @@ html.high-contrast select {
 .gold-pulse {
   animation: goldPulse 2s ease-in-out infinite;
 }
+
+/* ── Navbar Responsive ─────────────────────────────────────── */
+/* Mobile (< 768px): show hamburger, hide help */
+#mobile-toggle { display: flex !important; }
+
+/* Desktop (≥ 768px): hide hamburger, show help */
+@media (min-width: 768px) {
+  #mobile-toggle { display: none !important; }
+}
