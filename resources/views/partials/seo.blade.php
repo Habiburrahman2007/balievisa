@@ -18,7 +18,7 @@
       },
       "inLanguage": "{{ app()->getLocale() }}"
     }
-    @hasSection('structured_data')
+    @if(\Illuminate\Support\Facades\View::hasSection('structured_data'))
       ,@yield('structured_data')
     @endif
   ]
