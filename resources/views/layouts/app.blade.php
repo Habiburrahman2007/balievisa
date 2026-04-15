@@ -92,7 +92,7 @@
       <polyline points="18 15 12 9 6 15" />
     </svg>
   </button>
-  {{-- ═══ Floating WhatsApp Button ═══ --}}
+
   <a href="https://wa.me/62895330440544" target="_blank" rel="noopener noreferrer"
     class="fixed bottom-6 left-6 z-[9999] w-12 h-12 rounded-full bg-[var(--color-navy)] text-white border-2 border-[var(--color-gold)] flex items-center justify-center cursor-pointer shadow-[0_4px_20px_rgba(0,43,91,0.3)] transition-all hover:scale-110 hover:shadow-[0_6px_28px_rgba(0,43,91,0.4)]"
     aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
