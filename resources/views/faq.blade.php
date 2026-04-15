@@ -6,30 +6,30 @@
 
 @section('structured_data')
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
+  "@@context": "https://schema.org",
+  "@@type": "FAQPage",
   "mainEntity": [
     {
-      "@type": "Question",
+      "@@type": "Question",
       "name": "How long does the arrival process take in Bali?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "@@type": "Answer",
         "text": "Without preparation: Immigration: 2–3 hours, Baggage: 30–60 minutes, Customs: 30–60 minutes. Total: 3–5 hours after landing."
       }
     },
     {
-      "@type": "Question",
+      "@@type": "Question",
       "name": "Can I really avoid long queues?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "@@type": "Answer",
         "text": "Yes, with proper preparation (eVOA + forms completed), you can significantly reduce waiting time."
       }
     },
     {
-      "@type": "Question",
+      "@@type": "Question",
       "name": "Why should I use your service instead of doing it myself?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "@@type": "Answer",
         "text": "Because small mistakes can cost hours at the airport. We ensure: Everything is done correctly, No confusion, Faster arrival experience, Peace of mind before travel."
       }
     }
