@@ -23,7 +23,7 @@
         </a>
 
         {{-- Desktop Menu --}}
-        <ul class="hidden md:flex items-center gap-8 xl:gap-12">
+        <ul class="hidden lg:flex items-center gap-8 xl:gap-12">
           <li>
             <a href="/"
               class="text-[0.9rem] {{ request()->is('/') ? 'font-bold text-[var(--color-navy)] border-b-2 border-[var(--color-gold)]' : 'font-semibold text-slate-600 hover:text-[var(--color-navy)] border-b-2 border-transparent hover:border-[var(--color-gold)]' }} transition-all pb-1">{{ __('site.nav_home') }}</a>
@@ -66,7 +66,7 @@
         </button>
 
         {{-- Language Dropdown --}}
-        <div class="relative hidden md:block" id="lang-dropdown-wrap">
+        <div class="relative hidden lg:block" id="lang-dropdown-wrap">
           <button id="lang-dropdown-btn" type="button" aria-label="Select Language"
             class="inline-flex items-center gap-1.5 bg-slate-100 text-[var(--color-navy)] text-sm font-semibold px-4 py-2.5 rounded-full transition-all hover:bg-slate-200 cursor-pointer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
