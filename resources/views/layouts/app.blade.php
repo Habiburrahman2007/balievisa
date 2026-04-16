@@ -46,8 +46,55 @@
 
   @vite(['resources/css/app.css'])
 
+  {{-- ─── Critical Above-The-Fold CSS (inline) ─────────── --}}
+  <style>
+    /* Hero section critical styles — prevents 3s+ LCP render delay */
+    #hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #002B5B;
+    }
+    #hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      will-change: auto;
+    }
+    #hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom right, rgba(0,43,91,0.90), rgba(0,43,91,0.80), rgba(0,27,61,0.90));
+    }
+    /* Prevent layout shift on navbar */
+    #main-navbar { min-height: 68px; contain: layout style; }
+    /* Prevent FOUT flash while fonts async-load */
+    body { font-family: Inter, Roboto, system-ui, sans-serif; }
+    /* Navbar scrolled state (critical) */
+    #main-navbar.scrolled { background:#fff; box-shadow:0 4px 24px rgba(0,43,91,.12); }
+    /* Gold pulse animation */
+    @keyframes goldPulse {
+      0%,100%{box-shadow:0 0 0 0 rgba(255,193,7,.4)}
+      50%{box-shadow:0 0 0 12px rgba(255,193,7,0)}
+    }
+    .gold-pulse{animation:goldPulse 2s ease-in-out infinite}
+    /* Reveal animations */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
+    .reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
+    /* Animate pulse dot */
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+    .animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}
+  </style>
+
   {{-- ─── LCP Hero Image Preload ───────────────────────── --}}
-  <link rel="preload" as="image" href="/img/hero-bali.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/img/hero-bali.jpg" fetchpriority="high" type="image/jpeg">
 
   {{-- ─── Font Awesome (non-blocking) ─────────────────── --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -60,7 +107,7 @@
       crossorigin="anonymous" referrerpolicy="no-referrer" />
   </noscript>
 
-  {{-- ─── Welcome CSS (non-blocking) ──────────────────── --}}
+  {{-- ─── Welcome CSS (non-blocking, non-critical) ─────── --}}
   <link rel="stylesheet" href="/css/welcome.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="/css/welcome.css"></noscript>
   <!-- Favicon for Google Search and standard browsers -->
@@ -129,7 +176,7 @@
       </path>
     </svg>
   </a>
-  <script src="/js/welcome.js"></script>
+  <script src="/js/welcome.js" defer></script>
 </body>
 
 </html>

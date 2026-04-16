@@ -1,23 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ── Navbar scroll effect ────────────────────────────
+    // ── Navbar scroll effect (RAF-batched to prevent forced reflow) ──
     const navbar = document.getElementById('main-navbar');
     const backToTop = document.getElementById('back-to-top');
 
-    window.addEventListener('scroll', () => {
-        if (navbar) {
-            navbar.classList.toggle('scrolled', window.scrollY > 20);
+    let scrollTicking = false;
+
+    const onScroll = () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(() => {
+                const sy = window.scrollY;
+                if (navbar) {
+                    navbar.classList.toggle('scrolled', sy > 20);
+                }
+                if (backToTop) {
+                    const show = sy > 400;
+                    backToTop.style.opacity = show ? '1' : '0';
+                    backToTop.style.pointerEvents = show ? 'auto' : 'none';
+                }
+                scrollTicking = false;
+            });
+            scrollTicking = true;
         }
-        // Show/hide back-to-top button
-        if (backToTop) {
-            if (window.scrollY > 400) {
-                backToTop.style.opacity = '1';
-                backToTop.style.pointerEvents = 'auto';
-            } else {
-                backToTop.style.opacity = '0';
-                backToTop.style.pointerEvents = 'none';
-            }
-        }
-    }, { passive: true });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     // ── Back to top click ───────────────────────────────
     if (backToTop) {
@@ -70,9 +76,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Close mobile nav on scroll — merged into the RAF-batched handler above
+        const origOnScroll = onScroll;
+        window.removeEventListener('scroll', origOnScroll);
         window.addEventListener('scroll', () => {
-            if (navLinks.classList.contains('open')) {
-                navLinks.classList.remove('open');
+            if (!scrollTicking) {
+                requestAnimationFrame(() => {
+                    const sy = window.scrollY;
+                    if (navbar) navbar.classList.toggle('scrolled', sy > 20);
+                    if (backToTop) {
+                        const show = sy > 400;
+                        backToTop.style.opacity = show ? '1' : '0';
+                        backToTop.style.pointerEvents = show ? 'auto' : 'none';
+                    }
+                    if (navLinks.classList.contains('open')) {
+                        navLinks.classList.remove('open');
+                    }
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
             }
         }, { passive: true });
     }

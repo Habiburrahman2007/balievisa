@@ -17,15 +17,29 @@
 @section('content')
   {{-- ═══════════════════════════════════════════ HERO ═══ --}}
   <section id="hero" class="relative min-h-[85vh] flex items-center overflow-hidden bg-[var(--color-navy)]">
-    <div class="absolute inset-0 bg-[url('/img/hero-bali.jpg')] bg-center bg-cover"></div>
+    {{-- LCP image: use real <img> so the <link rel=preload> in <head> is matched --}}
+    <img
+      id="hero-img"
+      src="/img/hero-bali.jpg"
+      alt=""
+      aria-hidden="true"
+      width="1440"
+      height="900"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+    >
+    <div id="hero-overlay"></div>
+    {{-- Decorative glows: composited-only, no layout impact --}}
     <div
-      class="absolute inset-0 bg-gradient-to-br from-[var(--color-navy)]/90 via-[var(--color-navy)]/80 to-[var(--color-navy-dark)]/90">
+      class="absolute w-[500px] h-[500px] -right-[80px] top-1/2 -translate-y-1/2 pointer-events-none"
+      style="background:radial-gradient(circle,rgba(255,193,7,0.08) 0%,transparent 70%);will-change:transform;"
+      aria-hidden="true">
     </div>
     <div
-      class="absolute w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(255,193,7,0.08)_0%,transparent_70%)] -right-[80px] top-1/2 -translate-y-1/2 pointer-events-none">
-    </div>
-    <div
-      class="absolute w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(255,193,7,0.06)_0%,transparent_70%)] left-[10%] bottom-[10%] pointer-events-none">
+      class="absolute w-[300px] h-[300px] left-[10%] bottom-[10%] pointer-events-none"
+      style="background:radial-gradient(circle,rgba(255,193,7,0.06) 0%,transparent 70%);will-change:transform;"
+      aria-hidden="true">
     </div>
 
     <div class="max-w-[1200px] mx-auto px-6 relative z-10 py-20">
