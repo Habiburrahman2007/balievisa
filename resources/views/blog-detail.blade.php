@@ -16,8 +16,12 @@
         @endif
 
         <div class="p-8 md:p-12">
-          <div class="flex items-center gap-2 text-sm font-semibold text-slate-600 mb-6 tracking-wide uppercase">
-            <span>{{ $article->published_at ? $article->published_at->format('F d, Y') : $article->created_at->format('F d, Y') }}</span>
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2 text-sm font-semibold text-slate-600 tracking-wide uppercase">
+              <span>{{ $article->published_at ? $article->published_at->format('F d, Y') : $article->created_at->format('F d, Y') }}</span>
+            </div>
+            
+            <x-copy-link />
           </div>
           
           <h1 class="text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-slate-900 mb-8 leading-tight">
