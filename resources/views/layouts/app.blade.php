@@ -47,7 +47,7 @@
   @vite(['resources/css/app.css'])
 
   {{-- ─── LCP Hero Image Preload ───────────────────────── --}}
-  <link rel="preload" as="image" href="/img/hero-bali.png" fetchpriority="high">
+  <link rel="preload" as="image" href="/img/hero-bali.jpg" fetchpriority="high">
 
   {{-- ─── Font Awesome (non-blocking) ─────────────────── --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
