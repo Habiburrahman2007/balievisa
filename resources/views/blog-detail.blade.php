@@ -11,7 +11,7 @@
       <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
         @if($article->image)
         <div class="w-full h-[400px]">
-          <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover">
+          <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}" width="800" height="400" loading="eager" fetchpriority="high" class="w-full h-full object-cover">
         </div>
         @endif
 

@@ -34,17 +34,35 @@
   <link rel="alternate" hreflang="hi" href="{{ url()->current() }}?lang=hi">
   <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
 
+  {{-- ─── Fonts (non-blocking) ──────────────────────────── --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </noscript>
 
   @vite(['resources/css/app.css'])
+
+  {{-- ─── LCP Hero Image Preload ───────────────────────── --}}
+  <link rel="preload" as="image" href="/img/hero-bali.png" fetchpriority="high">
+
+  {{-- ─── Font Awesome (non-blocking) ─────────────────── --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/css/welcome.css">
+    crossorigin="anonymous" referrerpolicy="no-referrer"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </noscript>
+
+  {{-- ─── Welcome CSS (non-blocking) ──────────────────── --}}
+  <link rel="stylesheet" href="/css/welcome.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/welcome.css"></noscript>
   <!-- Favicon for Google Search and standard browsers -->
   <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('images/favicon-48.png') }}">
   <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/favicon-192.png') }}">
@@ -54,14 +72,18 @@
   {{-- ─── Extra Header Content ─────────────────────────── --}}
   @yield('head_extra')
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9S0JHC6XS"></script>
+  <!-- Google tag (gtag.js) - deferred to not block render -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-W9S0JHC6XS');
+    window.addEventListener('load', function() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-W9S0JHC6XS';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W9S0JHC6XS');
+    });
   </script>
 
   <!-- Structured Data: Organization Logo -->
@@ -74,8 +96,8 @@
     }
   </script>
   
-  <!-- Alpine JS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Alpine JS (pinned version for reliability) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
 </head>
 
 <body class="font-sans bg-[var(--color-bg)] text-slate-900 leading-relaxed antialiased">

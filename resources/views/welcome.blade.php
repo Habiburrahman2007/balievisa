@@ -17,7 +17,7 @@
 @section('content')
   {{-- ═══════════════════════════════════════════ HERO ═══ --}}
   <section id="hero" class="relative min-h-[85vh] flex items-center overflow-hidden bg-[var(--color-navy)]">
-    <div class="absolute inset-0 bg-[url('/img/hero-bali.png')] bg-center bg-cover"></div>
+    <div class="absolute inset-0 bg-[url('/img/hero-bali.jpg')] bg-center bg-cover"></div>
     <div
       class="absolute inset-0 bg-gradient-to-br from-[var(--color-navy)]/90 via-[var(--color-navy)]/80 to-[var(--color-navy-dark)]/90">
     </div>
@@ -186,7 +186,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-6">
 
         <div class="relative rounded-3xl overflow-hidden p-8 flex flex-col justify-end text-white min-h-[250px]">
-          <img src="/img/hero-bali.png" alt="Sunset" class="absolute inset-0 w-full h-full object-cover">
+          <img src="/img/hero-bali.jpg" alt="Sunset" width="800" height="500" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40"></div>
           <div class="relative z-10 w-full">
             <h2 class="text-2xl font-bold mb-2">{{ __('site.dont_wait') }}</h2>
@@ -317,7 +317,7 @@
         @foreach($latestNews as $article)
         <article class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-1 hover:shadow-lg flex flex-col h-full group">
           <div class="h-48 overflow-hidden relative">
-            <img src="{{ $article->image ? asset('storage/' . $article->image) : '/img/hero-bali.png' }}" alt="{{ $article->title }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <img src="{{ $article->image ? asset('storage/' . $article->image) : '/img/hero-bali.jpg' }}" alt="{{ $article->title }}" width="640" height="192" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
           <div class="p-6 flex flex-col flex-1">

@@ -16,7 +16,7 @@
       <div class="flex items-center gap-10 h-full">
         {{-- Logo --}}
         <a href="/" class="flex items-center gap-3 shrink-0" id="logo" aria-label="Bali E Visa Home">
-          <img src="/images/logo-visa.png" class="w-12 h-12 object-contain" alt="Bali E Visa Logo">
+          <img src="/images/logo-visa.png" class="w-12 h-12 object-contain" alt="Bali E Visa Logo" width="48" height="48" loading="eager" fetchpriority="high">
           <div class="flex flex-col">
             <span class="font-bold text-base text-[var(--color-navy)] leading-tight">Bali E Visa</span>
             <span class="text-[0.65rem] text-slate-600 font-medium leading-tight hidden sm:block">
