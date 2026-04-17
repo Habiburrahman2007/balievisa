@@ -14,6 +14,7 @@ class Article extends Model
         'content',
         'is_published',
         'published_at',
+        'views',
     ];
 
     protected $casts = [

@@ -17,7 +17,12 @@
 
         <div class="p-8 md:p-12">
           <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-2 text-sm font-semibold text-slate-600 tracking-wide uppercase">
+            <div class="flex items-center gap-3 text-sm font-semibold text-slate-600 tracking-wide uppercase">
+              <div class="flex items-center gap-1.5" title="{{ number_format($article->views) }} people have read this article">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>{{ number_format($article->views) }} Views</span>
+              </div>
+              <span class="text-slate-400">&bull;</span>
               <span>{{ $article->published_at ? $article->published_at->format('F d, Y') : $article->created_at->format('F d, Y') }}</span>
             </div>
             

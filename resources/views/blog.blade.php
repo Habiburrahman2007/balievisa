@@ -20,6 +20,11 @@
           </div>
           <div class="p-7 flex flex-col flex-1">
             <div class="flex items-center gap-2 text-[0.75rem] font-semibold text-slate-600 mb-4 tracking-wide uppercase">
+              <div class="flex items-center gap-1" title="{{ number_format($article->views) }} views">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>{{ number_format($article->views) }}</span>
+              </div>
+              <span class="text-slate-400">&bull;</span>
               <span>{{ $article->published_at ? $article->published_at->format('F d, Y') : $article->created_at->format('F d, Y') }}</span>
             </div>
             <h2 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">{{ $article->title }}</h2>

@@ -145,6 +145,9 @@
   
   <!-- Alpine JS (pinned version for reliability) -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+  
+  <!-- Welcome JS (deferred) - Dipindahkan ke head agar didownload lebih awal -->
+  <script defer src="/js/welcome.js"></script>
 </head>
 
 <body class="font-sans bg-[var(--color-bg)] text-slate-900 leading-relaxed antialiased">
@@ -176,7 +179,6 @@
       </path>
     </svg>
   </a>
-  <script src="/js/welcome.js" defer></script>
 </body>
 
 </html>

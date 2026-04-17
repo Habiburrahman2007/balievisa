@@ -56,6 +56,9 @@ Route::get('/news/{slug}', function ($slug) {
     $article = Article::where('slug', $slug)
         ->where('is_published', true)
         ->firstOrFail();
+
+    $article->increment('views');
+
     return view('blog-detail', compact('article'));
 })->name('news.detail');
 
