@@ -95,15 +95,13 @@
   <link rel="preload" as="image" href="/img/hero-bali.jpg" fetchpriority="high" type="image/jpeg">
 
   {{-- ─── Font Awesome (non-blocking) ─────────────────── --}}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"
-    media="print" onload="this.media='all'" />
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </noscript>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+    integrity="sha512-GWzVrcGlo0adTR7780BBcxPaq587eeLoLQW9Wao5UJvC79jTHNH969ny140CtZVYkbWPVK8nONuQujiqhF76iA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+    /* Prevent icon flash (FA SVG approach) */
+    .fa-svg-icon { height: 1em; width: auto; display: inline-block; vertical-align: -0.125em; }
+  </style>
 
   {{-- ─── Welcome CSS (non-blocking, non-critical) ─────── --}}
   <link rel="stylesheet" href="/css/welcome.css" media="print" onload="this.media='all'">

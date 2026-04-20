@@ -4,11 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Article;
 
 Route::get('/', function () {
-    $latestNews = Article::where('is_published', true)
-        ->latest('published_at')
-        ->latest('id')
-        ->take(3)
-        ->get();
+    $latestNews = cache()->remember('latest_news', 3600, function () {
+        return Article::where('is_published', true)
+            ->latest('published_at')
+            ->latest('id')
+            ->take(3)
+            ->get();
+    });
     return view('welcome', compact('latestNews'));
 });
 
@@ -45,10 +47,12 @@ Route::get('/terms-and-conditions', function () {
 })->name('terms-and-conditions');
 
 Route::get('/news', function () {
-    $articles = Article::where('is_published', true)
-        ->latest('published_at')
-        ->latest('id')
-        ->get();
+    $articles = cache()->remember('all_articles', 3600, function () {
+        return Article::where('is_published', true)
+            ->latest('published_at')
+            ->latest('id')
+            ->get();
+    });
     return view('blog', compact('articles'));
 })->name('news');
 
