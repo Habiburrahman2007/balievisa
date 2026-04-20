@@ -104,9 +104,9 @@
           </div>
         </div>
 
-        {{-- Help Button --}}
+        {{-- Help Button: hidden on mobile, visible md+ --}}
         <a href="/faq"
-          class="inline-flex shrink-0 whitespace-nowrap items-center gap-2 bg-[var(--color-navy)] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,43,91,0.35)] shadow-[0_4px_12px_rgba(0,43,91,0.2)]">
+          class="hidden md:inline-flex shrink-0 whitespace-nowrap items-center gap-2 bg-[var(--color-navy)] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,43,91,0.35)] shadow-[0_4px_12px_rgba(0,43,91,0.2)]">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
@@ -119,46 +119,111 @@
     </div>
   </div>
 
-  {{-- Mobile Navigation Overlay (Berbasis Tailwind) --}}
+  {{-- Mobile Navigation Overlay --}}
   <style>
-    #nav-links { background-color: rgba(0, 43, 91, 0.98); }
+    #nav-links { background: linear-gradient(160deg, rgba(0,30,70,0.99) 0%, rgba(0,43,91,0.97) 100%); }
     #nav-links.open { opacity: 1 !important; pointer-events: auto !important; transform: translateX(0) !important; }
+    #nav-links .mobile-link { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    #nav-links .mobile-link .link-label { display: flex; align-items: center; gap: 0.75rem; }
   </style>
-  <div id="nav-links" class="fixed inset-0 z-[100] backdrop-blur-md flex flex-col items-center justify-center p-6 gap-5 opacity-0 pointer-events-none translate-x-8 transition-all duration-300 ease-in-out lg:!hidden">
-    <button
-      class="absolute top-6 right-6 text-white transition-all hover:text-[var(--color-gold)] cursor-pointer"
-      onclick="document.getElementById('nav-links').classList.remove('open')" aria-label="Close menu">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
+  <div id="nav-links" class="fixed inset-0 z-[100] flex flex-col overflow-y-auto opacity-0 pointer-events-none translate-x-8 transition-all duration-300 ease-in-out lg:!hidden">
 
-    <a href="/" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_home') }}</a>
-    <a href="{{ route('arrival-card') }}" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_arrival') }}</a>
-    <a href="{{ route('visa') }}" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_visa') }}</a>
-    <a href="/bali-levy" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_levy') }}</a>
-    <a href="{{ route('steps') }}" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_steps') }}</a>
-    <a href="{{ route('news') }}" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_news') }}</a>
-
-    <div class="w-full max-w-[200px] h-px bg-white/20 my-4"></div>
-
-    {{-- Language Selector in Mobile --}}
-    <div class="flex flex-wrap justify-center gap-3 py-2 px-6">
-      @foreach($langs as $code => $info)
-        <a href="{{ route('locale.switch', $code) }}"
-          class="flex items-center gap-2 text-xs px-3 py-2 rounded-lg {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)] font-bold' : 'bg-white/10 text-white' }} transition-colors">
-          <span class="text-base">{{ $info['flag'] }}</span>
-          <span>{{ strtoupper($code) }}</span>
-        </a>
-      @endforeach
+    {{-- Header row --}}
+    <div class="flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
+      <a href="/" class="flex items-center gap-3" onclick="document.getElementById('nav-links').classList.remove('open')">
+        <img src="/images/logo-visa.png" class="w-10 h-10 object-contain" alt="Bali E Visa Logo">
+        <div class="flex flex-col">
+          <span class="font-bold text-white leading-tight">Bali E Visa</span>
+          <span class="text-[0.65rem] text-white/60 leading-tight">{{ __('site.nav_portal') }}</span>
+        </div>
+      </a>
+      <button
+        class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all cursor-pointer"
+        onclick="document.getElementById('nav-links').classList.remove('open')" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
 
-    <a href="/faq"
-      class="mt-6 !bg-white !text-[var(--color-navy)] !text-sm px-8 py-3 rounded-full flex items-center gap-2 font-bold shadow-lg">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-        <path
-          d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
-      </svg>
-      <span>{{ __('site.nav_help') }}</span>
-    </a>
+    {{-- Nav Links --}}
+    <nav class="flex flex-col px-4 py-4 gap-1 flex-1">
+      <a href="/" onclick="document.getElementById('nav-links').classList.remove('open')"
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('/') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        <span class="link-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          {{ __('site.nav_home') }}
+        </span>
+        @if(request()->is('/'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+      </a>
+
+      <a href="{{ route('arrival-card') }}" onclick="document.getElementById('nav-links').classList.remove('open')"
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('arrival-card') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        <span class="link-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          {{ __('site.nav_arrival') }}
+        </span>
+        @if(request()->is('arrival-card'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+      </a>
+
+      <a href="{{ route('visa') }}" onclick="document.getElementById('nav-links').classList.remove('open')"
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('visa') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        <span class="link-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          {{ __('site.nav_visa') }}
+        </span>
+        @if(request()->is('visa'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+      </a>
+
+      <a href="/bali-levy" onclick="document.getElementById('nav-links').classList.remove('open')"
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('bali-levy') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        <span class="link-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          {{ __('site.nav_levy') }}
+        </span>
+        @if(request()->is('bali-levy'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+      </a>
+
+      <a href="{{ route('steps') }}" onclick="document.getElementById('nav-links').classList.remove('open')"
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('steps') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        <span class="link-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          {{ __('site.nav_steps') }}
+        </span>
+        @if(request()->is('steps'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+      </a>
+
+      <a href="{{ route('news') }}" onclick="document.getElementById('nav-links').classList.remove('open')"
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->routeIs('news*') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        <span class="link-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg>
+          {{ __('site.nav_news') }}
+        </span>
+        @if(request()->routeIs('news*'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+      </a>
+    </nav>
+
+    {{-- Footer area: language + help --}}
+    <div class="shrink-0 px-6 pb-8 pt-4 border-t border-white/10 space-y-4">
+      {{-- Language Selector --}}
+      <p class="text-[0.7rem] text-white/40 uppercase tracking-widest font-semibold mb-2">{{ __('site.nav_language') ?? 'Language' }}</p>
+      <div class="flex flex-wrap gap-2">
+        @foreach($langs as $code => $info)
+          <a href="{{ route('locale.switch', $code) }}"
+            class="flex items-center gap-1.5 text-sm px-3 py-2 rounded-lg font-semibold {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/10 text-white hover:bg-white/20' }} transition-colors">
+            <span>{{ $info['flag'] }}</span>
+            <span>{{ strtoupper($code) }}</span>
+          </a>
+        @endforeach
+      </div>
+
+      {{-- Help CTA --}}
+      <a href="/faq" onclick="document.getElementById('nav-links').classList.remove('open')"
+        class="flex items-center justify-center gap-2 w-full bg-white text-[var(--color-navy)] text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg hover:bg-[var(--color-gold)] transition-all">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+        </svg>
+        <span>{{ __('site.nav_help') }}</span>
+      </a>
+    </div>
   </div>
 </nav>
