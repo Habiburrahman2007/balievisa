@@ -121,7 +121,7 @@
 
   {{-- Mobile Navigation Overlay --}}
   <style>
-    #nav-links { background: linear-gradient(160deg, #001e46 0%, #002b5b 100%); }
+    #nav-links { background: #002b5b; }
     #nav-links.open { opacity: 1 !important; pointer-events: auto !important; transform: translateX(0) !important; }
     #nav-links .mobile-link { display: flex; align-items: center; justify-content: space-between; width: 100%; }
     #nav-links .mobile-link .link-label { display: flex; align-items: center; gap: 0.75rem; }
@@ -147,68 +147,68 @@
     {{-- Nav Links --}}
     <nav class="flex flex-col px-4 py-4 gap-1 flex-1">
       <a href="/" onclick="document.getElementById('nav-links').classList.remove('open')"
-        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('/') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('/') ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/10 text-white hover:bg-[var(--color-navy)]/80' }} text-base font-semibold transition-all">
         <span class="link-label">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           {{ __('site.nav_home') }}
         </span>
-        @if(request()->is('/'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+        @if(request()->is('/'))<svg class="w-4 h-4 text-[var(--color-navy)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
       </a>
 
       <a href="{{ route('arrival-card') }}" onclick="document.getElementById('nav-links').classList.remove('open')"
-        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('arrival-card') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('arrival-card') ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/10 text-white hover:bg-[var(--color-navy)]/80' }} text-base font-semibold transition-all">
         <span class="link-label">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
           {{ __('site.nav_arrival') }}
         </span>
-        @if(request()->is('arrival-card'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+        @if(request()->is('arrival-card'))<svg class="w-4 h-4 text-[var(--color-navy)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
       </a>
 
       <a href="{{ route('visa') }}" onclick="document.getElementById('nav-links').classList.remove('open')"
-        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('visa') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('visa') ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/10 text-white hover:bg-[var(--color-navy)]/80' }} text-base font-semibold transition-all">
         <span class="link-label">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           {{ __('site.nav_visa') }}
         </span>
-        @if(request()->is('visa'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+        @if(request()->is('visa'))<svg class="w-4 h-4 text-[var(--color-navy)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
       </a>
 
       <a href="/bali-levy" onclick="document.getElementById('nav-links').classList.remove('open')"
-        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('bali-levy') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('bali-levy') ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/10 text-white hover:bg-[var(--color-navy)]/80' }} text-base font-semibold transition-all">
         <span class="link-label">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           {{ __('site.nav_levy') }}
         </span>
-        @if(request()->is('bali-levy'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+        @if(request()->is('bali-levy'))<svg class="w-4 h-4 text-[var(--color-navy)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
       </a>
 
       <a href="{{ route('steps') }}" onclick="document.getElementById('nav-links').classList.remove('open')"
-        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('steps') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->is('steps') ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/10 text-white hover:bg-[var(--color-navy)]/80' }} text-base font-semibold transition-all">
         <span class="link-label">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
           {{ __('site.nav_steps') }}
         </span>
-        @if(request()->is('steps'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+        @if(request()->is('steps'))<svg class="w-4 h-4 text-[var(--color-navy)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
       </a>
 
       <a href="{{ route('news') }}" onclick="document.getElementById('nav-links').classList.remove('open')"
-        class="mobile-link px-4 py-4 rounded-xl {{ request()->routeIs('news*') ? 'bg-white/15 text-[var(--color-gold)]' : 'text-white hover:bg-white/10' }} text-base font-semibold transition-all">
+        class="mobile-link px-4 py-4 rounded-xl {{ request()->routeIs('news*') ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/10 text-white hover:bg-[var(--color-navy)]/80' }} text-base font-semibold transition-all">
         <span class="link-label">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg>
           {{ __('site.nav_news') }}
         </span>
-        @if(request()->routeIs('news*'))<svg class="w-4 h-4 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
+        @if(request()->routeIs('news*'))<svg class="w-4 h-4 text-[var(--color-navy)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>@endif
       </a>
     </nav>
 
     {{-- Footer area: language + help --}}
     <div class="shrink-0 px-6 pb-8 pt-4 border-t border-white/10 space-y-4">
       {{-- Language Selector --}}
-      <p class="text-[0.7rem] text-white/40 uppercase tracking-widest font-semibold mb-2">{{ __('site.nav_language') !== 'site.nav_language' ? __('site.nav_language') : 'Language' }}</p>
+      <p class="text-[0.7rem] text-white uppercase tracking-widest font-semibold mb-2">{{ __('site.nav_language') !== 'site.nav_language' ? __('site.nav_language') : 'Language' }}</p>
       <div class="flex flex-wrap gap-2">
         @foreach($langs as $code => $info)
           <a href="{{ route('locale.switch', $code) }}"
-            class="flex items-center gap-1.5 text-sm px-3 py-2 rounded-lg font-semibold {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/10 text-white hover:bg-white/20' }} transition-colors">
+            class="flex items-center gap-1.5 text-sm px-3 py-2 rounded-lg font-semibold {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/20 text-white hover:bg-white/30' }} transition-colors">
             <span>{{ $info['flag'] }}</span>
             <span>{{ strtoupper($code) }}</span>
           </a>
@@ -217,7 +217,7 @@
 
       {{-- Help CTA --}}
       <a href="/faq" onclick="document.getElementById('nav-links').classList.remove('open')"
-        class="flex items-center justify-center gap-2 w-full bg-white text-[var(--color-navy)] text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg hover:bg-[var(--color-gold)] transition-all">
+        class="flex items-center justify-center gap-2 w-full bg-[var(--color-gold)] text-[var(--color-navy)] text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg hover:bg-[var(--color-gold-dark)] transition-all">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
           <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
