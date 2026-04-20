@@ -121,7 +121,7 @@
 
   {{-- Mobile Navigation Overlay --}}
   <style>
-    #nav-links { background: linear-gradient(160deg, rgba(0,30,70,0.99) 0%, rgba(0,43,91,0.97) 100%); }
+    #nav-links { background: linear-gradient(160deg, #001e46 0%, #002b5b 100%); }
     #nav-links.open { opacity: 1 !important; pointer-events: auto !important; transform: translateX(0) !important; }
     #nav-links .mobile-link { display: flex; align-items: center; justify-content: space-between; width: 100%; }
     #nav-links .mobile-link .link-label { display: flex; align-items: center; gap: 0.75rem; }
