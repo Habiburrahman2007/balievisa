@@ -106,6 +106,7 @@
   <link rel="stylesheet" href="/css/welcome.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="/css/welcome.css"></noscript>
   <!-- Favicon for Google Search and standard browsers -->
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('images/favicon-48.png') }}">
   <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/favicon-192.png') }}">
   <link rel="apple-touch-icon" href="{{ asset('images/logo-visa.png') }}">
