@@ -25,8 +25,8 @@
           </div>
         </a>
 
-        {{-- Desktop Menu: Muncul hanya di LG ke atas --}}
-        <ul class="hidden lg:flex items-center gap-8 xl:gap-12">
+        {{-- Desktop Menu: Hidden on all screens as requested --}}
+        <ul class="hidden items-center gap-8 xl:gap-12">
           <li>
             <a href="/"
               class="text-[0.9rem] {{ request()->is('/') ? 'font-bold text-[var(--color-navy)] border-b-2 border-[var(--color-gold)]' : 'font-semibold text-slate-600 hover:text-[var(--color-navy)] border-b-2 border-transparent hover:border-[var(--color-gold)]' }} transition-all pb-1">{{ __('site.nav_home') }}</a>
@@ -57,9 +57,9 @@
       {{-- Right-side --}}
       <div class="flex items-center gap-3">
 
-        {{-- Mobile Toggle: DIPERBAIKI (Tambah lg:hidden, hapus inline style) --}}
+        {{-- Mobile Toggle: Visible on all screens since desktop menu is hidden --}}
         <button id="mobile-toggle"
-          class="flex lg:hidden items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
+          class="flex items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
           aria-label="Toggle menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
@@ -121,12 +121,12 @@
 
   {{-- Mobile Navigation Overlay --}}
   <style>
-    #nav-links { background: #002b5b; }
-    #nav-links.open { opacity: 1 !important; pointer-events: auto !important; transform: translateX(0) !important; }
+    #nav-links { background-color: #002b5b !important; opacity: 0; pointer-events: none; transition: all 0.3s ease-in-out; }
+    #nav-links.open { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; transform: translateX(0) !important; }
     #nav-links .mobile-link { display: flex; align-items: center; justify-content: space-between; width: 100%; }
     #nav-links .mobile-link .link-label { display: flex; align-items: center; gap: 0.75rem; }
   </style>
-  <div id="nav-links" class="fixed inset-0 z-[100] flex flex-col overflow-y-auto opacity-0 pointer-events-none translate-x-8 transition-all duration-300 ease-in-out lg:!hidden">
+  <div id="nav-links" class="fixed inset-0 z-[100] flex flex-col overflow-y-auto translate-x-8">
 
     {{-- Header row --}}
     <div class="flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
