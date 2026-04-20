@@ -9,16 +9,16 @@
   <meta name="description" content="@yield('meta_description', __('site.hero_subtitle'))">
   <meta name="keywords"
     content="@yield('meta_keywords', 'Indonesia e-Visa on Arrival, e-VOA, Apply Visa for Bali, Bali Tourist Levy, Fast Bali Visa Service, Bali Visa Consultation, Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Immigration Rules')">
-  <link rel="canonical" href="{{ url()->full() }}">
+  <link rel="canonical" href="{{ request()->fullUrl() }}">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ url()->full() }}">
+  <meta property="og:url" content="{{ request()->fullUrl() }}">
   <meta property="og:title" content="@yield('title', __('site.nav_portal'))">
   <meta property="og:description" content="@yield('meta_description', __('site.hero_subtitle'))">
   <meta property="og:image" content="{{ asset('images/bali_preview_website.jpg') }}">
 
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="{{ url()->full() }}">
+  <meta property="twitter:url" content="{{ request()->fullUrl() }}">
   <meta property="twitter:title" content="@yield('title', __('site.nav_portal'))">
   <meta property="twitter:description" content="@yield('meta_description', __('site.hero_subtitle'))">
   <meta property="twitter:image" content="{{ asset('images/bali_preview_website.jpg') }}">
