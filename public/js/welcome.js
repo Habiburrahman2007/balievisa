@@ -100,72 +100,93 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── FAQ accordion ───────────────────────────────────
-    document.querySelectorAll('[data-faq]').forEach(item => {
-        const toggleBtn = item.querySelector('.faq-q');
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', () => {
-                const isOpen = item.classList.contains('open');
-                document.querySelectorAll('[data-faq].open').forEach(el => el.classList.remove('open'));
-                if (!isOpen) item.classList.add('open');
-            });
-        }
-    });
-
-    // ── Scroll reveal ───────────────────────────────────
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('visible');
-                observer.unobserve(e.target);
+    const initFaq = () => {
+        document.querySelectorAll('[data-faq]').forEach(item => {
+            const toggleBtn = item.querySelector('.faq-q');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    document.querySelectorAll('[data-faq].open').forEach(el => el.classList.remove('open'));
+                    if (!isOpen) item.classList.add('open');
+                });
             }
         });
-    }, { threshold: 0.12 });
+    };
 
-    reveals.forEach(el => observer.observe(el));
-
-    // ── Count-up animation ──────────────────────────────
-    const counters = document.querySelectorAll('[data-count-target]');
-    if (counters.length) {
-        const formatNumber = (num, useSeparator) => {
-            if (!useSeparator) return num.toString();
-            return num.toLocaleString('en-US');
-        };
-
-        const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
-
-        const animateCounter = (el) => {
-            const target = parseInt(el.dataset.countTarget, 10);
-            const suffix = el.dataset.countSuffix || '';
-            const useSeparator = el.hasAttribute('data-count-separator');
-            const duration = 2000;
-            const startTime = performance.now();
-
-            const update = (now) => {
-                const elapsed = now - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const easedProgress = easeOutQuart(progress);
-                const current = Math.round(easedProgress * target);
-
-                el.textContent = formatNumber(current, useSeparator) + suffix;
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                }
-            };
-
-            requestAnimationFrame(update);
-        };
-
-        const countObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    countObserver.unobserve(entry.target);
+    // ── Scroll reveal ───────────────────────────────────
+    const initScrollReveal = () => {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.12 });
 
-        counters.forEach(el => countObserver.observe(el));
+        reveals.forEach(el => observer.observe(el));
+    };
+
+    // ── Count-up animation ──────────────────────────────
+    const initCounters = () => {
+        const counters = document.querySelectorAll('[data-count-target]');
+        if (counters.length) {
+            const formatNumber = (num, useSeparator) => {
+                if (!useSeparator) return num.toString();
+                return num.toLocaleString('en-US');
+            };
+
+            const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+            const animateCounter = (el) => {
+                const target = parseInt(el.dataset.countTarget, 10);
+                const suffix = el.dataset.countSuffix || '';
+                const useSeparator = el.hasAttribute('data-count-separator');
+                const duration = 2000;
+                const startTime = performance.now();
+
+                const update = (now) => {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutQuart(progress);
+                    const current = Math.round(easedProgress * target);
+
+                    el.textContent = formatNumber(current, useSeparator) + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    }
+                };
+
+                requestAnimationFrame(update);
+            };
+
+            const countObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        countObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(el => countObserver.observe(el));
+        }
+    };
+
+    // Defer non-critical UI initialization
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+            initFaq();
+            initScrollReveal();
+            initCounters();
+        });
+    } else {
+        setTimeout(() => {
+            initFaq();
+            initScrollReveal();
+            initCounters();
+        }, 200);
     }
 });

@@ -72,6 +72,9 @@
     body { font-family: Inter, Roboto, system-ui, sans-serif; }
     /* Navbar scrolled state (critical) */
     #main-navbar.scrolled { background:#fff; box-shadow:0 4px 24px rgba(0,43,91,.12); }
+    /* Optimasi rendering untuk section utama */
+    section, footer, main { contain: content; }
+    #hero { contain: none; } /* Hero butuh overflow untuk dekorasi */
     /* Gold pulse animation */
     @keyframes goldPulse {
       0%,100%{box-shadow:0 0 0 0 rgba(255,193,7,.4)}

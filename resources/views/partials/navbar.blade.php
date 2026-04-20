@@ -121,7 +121,7 @@
 
   {{-- Mobile Navigation Overlay --}}
   <style>
-    #nav-links { background-color: #002b5b !important; opacity: 0; pointer-events: none; transition: all 0.3s ease-in-out; }
+    #nav-links { background-color: #002b5b !important; opacity: 0; pointer-events: none; transition: all 0.3s ease-in-out; will-change: transform, opacity; }
     #nav-links.open { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; transform: translateX(0) !important; }
     #nav-links .mobile-link { display: flex; align-items: center; justify-content: space-between; width: 100%; }
     #nav-links .mobile-link .link-label { display: flex; align-items: center; gap: 0.75rem; }
