@@ -119,20 +119,23 @@
     </div>
   </div>
 
-  {{-- Mobile Navigation Overlay --}}
-  <div id="nav-links">
+  {{-- Mobile Navigation Overlay (Berbasis Tailwind) --}}
+  <style>
+    #nav-links.open { opacity: 1 !important; pointer-events: auto !important; transform: translateX(0) !important; }
+  </style>
+  <div id="nav-links" class="fixed inset-0 z-[100] bg-[#002B5B]/98 backdrop-blur-md flex flex-col items-center justify-center p-6 gap-5 opacity-0 pointer-events-none translate-x-8 transition-all duration-300 ease-in-out lg:!hidden">
     <button
-      class="absolute top-6 right-6 text-white text-3xl transition-all hover:text-[var(--color-gold)] cursor-pointer"
+      class="absolute top-6 right-6 text-white transition-all hover:text-[var(--color-gold)] cursor-pointer"
       onclick="document.getElementById('nav-links').classList.remove('open')" aria-label="Close menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
 
-    <a href="/" class="mobile-nav-link">{{ __('site.nav_home') }}</a>
-    <a href="{{ route('arrival-card') }}" class="mobile-nav-link">{{ __('site.nav_arrival') }}</a>
-    <a href="{{ route('visa') }}" class="mobile-nav-link">{{ __('site.nav_visa') }}</a>
-    <a href="/bali-levy" class="mobile-nav-link">{{ __('site.nav_levy') }}</a>
-    <a href="{{ route('steps') }}" class="mobile-nav-link">{{ __('site.nav_steps') }}</a>
-    <a href="{{ route('news') }}" class="mobile-nav-link">{{ __('site.nav_news') }}</a>
+    <a href="/" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_home') }}</a>
+    <a href="{{ route('arrival-card') }}" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_arrival') }}</a>
+    <a href="{{ route('visa') }}" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_visa') }}</a>
+    <a href="/bali-levy" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_levy') }}</a>
+    <a href="{{ route('steps') }}" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_steps') }}</a>
+    <a href="{{ route('news') }}" class="text-white text-xl font-semibold transition-colors hover:text-[var(--color-gold)]">{{ __('site.nav_news') }}</a>
 
     <div class="w-full max-w-[200px] h-px bg-white/20 my-4"></div>
 
