@@ -121,9 +121,10 @@
 
   {{-- Mobile Navigation Overlay (Berbasis Tailwind) --}}
   <style>
+    #nav-links { background-color: rgba(0, 43, 91, 0.98); }
     #nav-links.open { opacity: 1 !important; pointer-events: auto !important; transform: translateX(0) !important; }
   </style>
-  <div id="nav-links" class="fixed inset-0 z-[100] bg-[#002B5B]/98 backdrop-blur-md flex flex-col items-center justify-center p-6 gap-5 opacity-0 pointer-events-none translate-x-8 transition-all duration-300 ease-in-out lg:!hidden">
+  <div id="nav-links" class="fixed inset-0 z-[100] backdrop-blur-md flex flex-col items-center justify-center p-6 gap-5 opacity-0 pointer-events-none translate-x-8 transition-all duration-300 ease-in-out lg:!hidden">
     <button
       class="absolute top-6 right-6 text-white transition-all hover:text-[var(--color-gold)] cursor-pointer"
       onclick="document.getElementById('nav-links').classList.remove('open')" aria-label="Close menu">
