@@ -35,48 +35,7 @@ body {
 }
 
 /* ── Mobile Menu Overlay ───────────────────────────────────── */
-#nav-links {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: rgba(0, 43, 91, 0.98);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  gap: 1.25rem;
-  
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(2rem);
-  transition: all 0.3s ease-in-out;
-}
-
-@media (min-width: 1024px) {
-  #nav-links {
-    display: none !important;
-  }
-}
-
-#nav-links.open {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0);
-}
-
-.mobile-nav-link {
-  color: #ffffff;
-  font-size: 1.25rem;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.mobile-nav-link:hover {
-  color: #FFC107;
-}
+/* Styles now controlled via Tailwind in navbar.blade.php */
 
 /* ── Quick Action Cards ────────────────────────────────────── */
 .qa-card {
@@ -318,13 +277,7 @@ html.high-contrast select {
 }
 
 /* ── Navbar Responsive ─────────────────────────────────────── */
-/* Mobile (< 768px): show hamburger, hide help */
-#mobile-toggle { display: flex !important; }
-
-/* Desktop (≥ 768px): hide hamburger, show help */
-@media (min-width: 768px) {
-  #mobile-toggle { display: none !important; }
-}
+/* Hamburger visibility now controlled via Tailwind lg:hidden in navbar.blade.php */
 
 /* ── Article Content (Rich Text) ───────────────────────────── */
 .prose {

@@ -204,7 +204,7 @@
     {{-- Footer area: language + help --}}
     <div class="shrink-0 px-6 pb-8 pt-4 border-t border-white/10 space-y-4">
       {{-- Language Selector --}}
-      <p class="text-[0.7rem] text-white/40 uppercase tracking-widest font-semibold mb-2">{{ __('site.nav_language') ?? 'Language' }}</p>
+      <p class="text-[0.7rem] text-white/40 uppercase tracking-widest font-semibold mb-2">{{ __('site.nav_language') !== 'site.nav_language' ? __('site.nav_language') : 'Language' }}</p>
       <div class="flex flex-wrap gap-2">
         @foreach($langs as $code => $info)
           <a href="{{ route('locale.switch', $code) }}"
