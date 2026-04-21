@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Article;
 
 Route::get('/', function () {
-    $latestNews = cache()->remember('latest_news', 3600, function () {
+    $latestNews = cache()->remember('latest_news_v2', 3600, function () {
         return Article::where('is_published', true)
             ->latest('published_at')
             ->latest('id')
@@ -47,7 +47,7 @@ Route::get('/terms-and-conditions', function () {
 })->name('terms-and-conditions');
 
 Route::get('/news', function () {
-    $articles = cache()->remember('all_articles', 3600, function () {
+    $articles = cache()->remember('all_articles_v2', 3600, function () {
         return Article::where('is_published', true)
             ->latest('published_at')
             ->latest('id')
