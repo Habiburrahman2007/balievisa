@@ -57,9 +57,9 @@
       {{-- Right-side --}}
       <div class="flex items-center gap-3">
 
-        {{-- Mobile Toggle: Visible on all screens since desktop menu is hidden --}}
+        {{-- Mobile Toggle: Visible on mobile/tablet, hidden on laptop/desktop --}}
         <button id="mobile-toggle"
-          class="flex items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
+          class="flex lg:hidden items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
           aria-label="Toggle menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
