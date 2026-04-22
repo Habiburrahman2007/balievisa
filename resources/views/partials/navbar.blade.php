@@ -232,27 +232,33 @@
   </div>
 
   <script>
-    (function() {
+    // Define functions globally for inline onclick handlers
+    window.openMenu = function() {
       const nav = document.getElementById('nav-links');
-      const toggle = document.getElementById('mobile-toggle');
-
-      if (!nav || !toggle) return;
-
-      window.openMenu = function() {
+      if (nav) {
         nav.classList.add('open');
         document.body.classList.add('menu-open');
-      };
+      }
+    };
 
-      window.closeMenu = function() {
+    window.closeMenu = function() {
+      const nav = document.getElementById('nav-links');
+      if (nav) {
         nav.classList.remove('open');
         document.body.classList.remove('menu-open');
-      };
+      }
+    };
 
-      toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        openMenu();
-      });
-    })();
+    // Backup listener in case button doesn't have onclick
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('mobile-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          window.openMenu();
+        });
+      }
+    });
   </script>
 </nav>

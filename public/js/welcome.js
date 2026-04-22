@@ -57,47 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Mobile menu toggle ──────────────────────────────
-    const toggle = document.getElementById('mobile-toggle');
-    const navLinks = document.getElementById('nav-links');
-    if (toggle && navLinks) {
-        toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navLinks.classList.toggle('open');
-        });
-
-        navLinks.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => navLinks.classList.remove('open'));
-        });
-
-        navLinks.addEventListener('click', (e) => {
-            if (e.target === navLinks) {
-                navLinks.classList.remove('open');
-            }
-        });
-
-        // Close mobile nav on scroll — merged into the RAF-batched handler above
-        const origOnScroll = onScroll;
-        window.removeEventListener('scroll', origOnScroll);
-        window.addEventListener('scroll', () => {
-            if (!scrollTicking) {
-                requestAnimationFrame(() => {
-                    const sy = window.scrollY;
-                    if (navbar) navbar.classList.toggle('scrolled', sy > 20);
-                    if (backToTop) {
-                        const show = sy > 400;
-                        backToTop.style.opacity = show ? '1' : '0';
-                        backToTop.style.pointerEvents = show ? 'auto' : 'none';
-                    }
-                    if (navLinks.classList.contains('open')) {
-                        navLinks.classList.remove('open');
-                    }
-                    scrollTicking = false;
-                });
-                scrollTicking = true;
-            }
-        }, { passive: true });
-    }
+    // ── Mobile menu toggle is now handled in navbar.blade.php ──
 
     // ── FAQ accordion ───────────────────────────────────
     const initFaq = () => {
