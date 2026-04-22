@@ -127,11 +127,13 @@
       z-index: 9999;
       display: flex;
       flex-direction: column;
-      background: #002b5b;
+      background: #002b5b;           /* ← solid penuh, tidak ada opacity */
       transform: translateX(100%);
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       pointer-events: none;
       visibility: hidden;
+      will-change: transform;
+      overflow: hidden;
     }
 
     #nav-links.open {
@@ -140,7 +142,22 @@
       visibility: visible;
     }
 
-    /* Prevent background scroll */
+    /* Overlay backdrop gelap di belakang menu */
+    #nav-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;           /* tepat di bawah nav-links */
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    #nav-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     body.menu-open {
       overflow: hidden;
     }
@@ -150,14 +167,14 @@
       border-radius: 12px;
       color: white;
       font-weight: 600;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       transition: all 0.2s;
       display: block;
       text-decoration: none;
     }
 
     .menu-item:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.18);
     }
 
     .menu-item.active {
@@ -165,6 +182,8 @@
       color: var(--color-navy);
     }
   </style>
+
+  <div id="nav-backdrop" onclick="closeMenu()"></div>
 
   <div id="nav-links">
     {{-- HEADER --}}
@@ -232,24 +251,26 @@
   </div>
 
   <script>
-    // Define functions globally for inline onclick handlers
     window.openMenu = function() {
-      const nav = document.getElementById('nav-links');
+      const nav      = document.getElementById('nav-links');
+      const backdrop = document.getElementById('nav-backdrop');
       if (nav) {
         nav.classList.add('open');
+        backdrop?.classList.add('open');
         document.body.classList.add('menu-open');
       }
     };
 
     window.closeMenu = function() {
-      const nav = document.getElementById('nav-links');
+      const nav      = document.getElementById('nav-links');
+      const backdrop = document.getElementById('nav-backdrop');
       if (nav) {
         nav.classList.remove('open');
+        backdrop?.classList.remove('open');
         document.body.classList.remove('menu-open');
       }
     };
 
-    // Backup listener in case button doesn't have onclick
     document.addEventListener('DOMContentLoaded', () => {
       const toggle = document.getElementById('mobile-toggle');
       if (toggle) {
