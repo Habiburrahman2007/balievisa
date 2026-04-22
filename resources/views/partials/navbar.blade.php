@@ -121,12 +121,29 @@
 
   {{-- Mobile Navigation Overlay --}}
   <style>
-    #nav-links { background-color: #002b5b !important; opacity: 0; pointer-events: none; transition: all 0.3s ease-in-out; will-change: transform, opacity; }
-    #nav-links.open { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; transform: translateX(0) !important; }
+    #nav-links { 
+      opacity: 0; 
+      visibility: hidden;
+      pointer-events: none; 
+      transition: all 0.3s ease-in-out; 
+      will-change: transform, opacity; 
+    }
+    #nav-links.open { 
+      opacity: 1 !important; 
+      visibility: visible !important; 
+      pointer-events: auto !important; 
+      transform: translateX(0) !important; 
+    }
     #nav-links .mobile-link { display: flex; align-items: center; justify-content: space-between; width: 100%; }
     #nav-links .mobile-link .link-label { display: flex; align-items: center; gap: 0.75rem; }
   </style>
-  <div id="nav-links" class="fixed inset-0 z-[100] flex flex-col overflow-y-auto translate-x-8">
+
+  {{-- 
+    PERBAIKAN: 
+    1. Menambahkan class `bg-[#002b5b]` untuk warna background solid.
+    2. Menambahkan `backdrop-blur-md` (opsional) agar jika ada bagian yang tembus, konten di belakangnya jadi blur dan teks tetap terbaca.
+  --}}
+  <div id="nav-links" class="fixed inset-0 z-[100] flex flex-col overflow-y-auto translate-x-8 bg-[#002b5b] backdrop-blur-md">
 
     {{-- Header row --}}
     <div class="flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
