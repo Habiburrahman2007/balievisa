@@ -119,136 +119,7 @@
     </div>
   </div>
 
-  {{-- MOBILE NAVIGATION OVERLAY --}}
-  <style>
-    #nav-links {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      background: #002b5b;           /* ← solid penuh, tidak ada opacity */
-      transform: translateX(100%);
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      pointer-events: none;
-      visibility: hidden;
-      will-change: transform;
-      overflow: hidden;
-    }
 
-    #nav-links.open {
-      transform: translateX(0);
-      pointer-events: auto;
-      visibility: visible;
-    }
-
-    /* Overlay backdrop gelap di belakang menu */
-    #nav-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 9998;           /* tepat di bawah nav-links */
-      background: rgba(0, 0, 0, 0.6);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s ease;
-    }
-
-    #nav-backdrop.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    .menu-item {
-      padding: 14px 16px;
-      border-radius: 12px;
-      color: white;
-      font-weight: 600;
-      background: rgba(255, 255, 255, 0.08);
-      transition: all 0.2s;
-      display: block;
-      text-decoration: none;
-    }
-
-    .menu-item:hover {
-      background: rgba(255, 255, 255, 0.18);
-    }
-
-    .menu-item.active {
-      background: var(--color-gold);
-      color: var(--color-navy);
-    }
-  </style>
-
-  <div id="nav-backdrop" onclick="closeMenu()"></div>
-
-  <div id="nav-links">
-    {{-- HEADER --}}
-    <div class="flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
-      <a href="/" class="flex items-center gap-3" onclick="closeMenu()">
-        <img src="/images/logo-visa.png" class="w-10 h-10 object-contain" alt="Logo">
-        <div class="flex flex-col">
-          <p class="text-white font-bold leading-tight">Bali E Visa</p>
-          <p class="text-white/60 text-[0.65rem] leading-tight">{{ __('site.nav_portal') }}</p>
-        </div>
-      </a>
-      <button onclick="closeMenu()" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all cursor-pointer" aria-label="Close menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-
-    {{-- MENU --}}
-    <div class="flex flex-col p-4 gap-2 flex-1 overflow-y-auto">
-      <a href="/" onclick="closeMenu()" class="menu-item {{ request()->is('/') ? 'active' : '' }}">
-        {{ __('site.nav_home') }}
-      </a>
-      <a href="{{ route('arrival-card') }}" onclick="closeMenu()" class="menu-item {{ request()->is('arrival-card') ? 'active' : '' }}">
-        {{ __('site.nav_arrival') }}
-      </a>
-      <a href="{{ route('visa') }}" onclick="closeMenu()" class="menu-item {{ request()->is('visa') ? 'active' : '' }}">
-        {{ __('site.nav_visa') }}
-      </a>
-      <a href="/bali-levy" onclick="closeMenu()" class="menu-item {{ request()->is('bali-levy') ? 'active' : '' }}">
-        {{ __('site.nav_levy') }}
-      </a>
-      <a href="{{ route('steps') }}" onclick="closeMenu()" class="menu-item {{ request()->is('steps') ? 'active' : '' }}">
-        {{ __('site.nav_steps') }}
-      </a>
-      <a href="{{ route('news') }}" onclick="closeMenu()" class="menu-item {{ request()->routeIs('news*') ? 'active' : '' }}">
-        {{ __('site.nav_news') }}
-      </a>
-    </div>
-
-    {{-- FOOTER --}}
-    <div class="p-6 border-t border-white/10 shrink-0 space-y-4">
-      <div>
-        <p class="text-white text-[0.7rem] uppercase tracking-widest font-semibold mb-3">{{ __('site.nav_language') !== 'site.nav_language' ? __('site.nav_language') : 'Language' }}</p>
-        <div class="flex gap-2 flex-wrap">
-          @foreach($langs as $code => $info)
-            <a href="{{ route('locale.switch', $code) }}"
-               class="px-3 py-2 rounded-lg text-sm font-semibold transition-colors {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/20 text-white hover:bg-white/30' }}">
-              {{ $info['flag'] }} {{ strtoupper($code) }}
-            </a>
-          @endforeach
-        </div>
-      </div>
-
-      <a href="/faq" onclick="closeMenu()"
-         class="flex items-center justify-center gap-2 w-full bg-[var(--color-gold)] text-[var(--color-navy)] text-sm font-bold py-3.5 rounded-xl shadow-lg hover:bg-[var(--color-gold-dark)] transition-all">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
-        </svg>
-        <span>{{ __('site.nav_help') }}</span>
-      </a>
-    </div>
-  </div>
 
   <script>
     window.openMenu = function() {
@@ -283,3 +154,134 @@
     });
   </script>
 </nav>
+
+{{-- MOBILE NAVIGATION OVERLAY — outside <nav> so position:fixed works correctly --}}
+{{-- The nav has CSS containment (contain: layout style) which traps fixed children --}}
+<style>
+  #nav-links {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    background: #002b5b;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    visibility: hidden;
+    will-change: transform;
+    overflow: hidden;
+  }
+
+  #nav-links.open {
+    transform: translateX(0);
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  #nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+
+  #nav-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .menu-item {
+    padding: 14px 16px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.08);
+    transition: all 0.2s;
+    display: block;
+    text-decoration: none;
+  }
+
+  .menu-item:hover {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .menu-item.active {
+    background: var(--color-gold);
+    color: var(--color-navy);
+  }
+</style>
+
+<div id="nav-backdrop" onclick="closeMenu()"></div>
+
+<div id="nav-links">
+  {{-- HEADER --}}
+  <div class="flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
+    <a href="/" class="flex items-center gap-3" onclick="closeMenu()">
+      <img src="/images/logo-visa.png" class="w-10 h-10 object-contain" alt="Logo">
+      <div class="flex flex-col">
+        <p class="text-white font-bold leading-tight">Bali E Visa</p>
+        <p class="text-white/60 text-[0.65rem] leading-tight">{{ __('site.nav_portal') }}</p>
+      </div>
+    </a>
+    <button onclick="closeMenu()" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all cursor-pointer" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  {{-- MENU --}}
+  <div class="flex flex-col p-4 gap-2 flex-1 overflow-y-auto">
+    <a href="/" onclick="closeMenu()" class="menu-item {{ request()->is('/') ? 'active' : '' }}">
+      {{ __('site.nav_home') }}
+    </a>
+    <a href="{{ route('arrival-card') }}" onclick="closeMenu()" class="menu-item {{ request()->is('arrival-card') ? 'active' : '' }}">
+      {{ __('site.nav_arrival') }}
+    </a>
+    <a href="{{ route('visa') }}" onclick="closeMenu()" class="menu-item {{ request()->is('visa') ? 'active' : '' }}">
+      {{ __('site.nav_visa') }}
+    </a>
+    <a href="/bali-levy" onclick="closeMenu()" class="menu-item {{ request()->is('bali-levy') ? 'active' : '' }}">
+      {{ __('site.nav_levy') }}
+    </a>
+    <a href="{{ route('steps') }}" onclick="closeMenu()" class="menu-item {{ request()->is('steps') ? 'active' : '' }}">
+      {{ __('site.nav_steps') }}
+    </a>
+    <a href="{{ route('news') }}" onclick="closeMenu()" class="menu-item {{ request()->routeIs('news*') ? 'active' : '' }}">
+      {{ __('site.nav_news') }}
+    </a>
+  </div>
+
+  {{-- FOOTER --}}
+  <div class="p-6 border-t border-white/10 shrink-0 space-y-4">
+    <div>
+      <p class="text-white text-[0.7rem] uppercase tracking-widest font-semibold mb-3">{{ __('site.nav_language') !== 'site.nav_language' ? __('site.nav_language') : 'Language' }}</p>
+      <div class="flex gap-2 flex-wrap">
+        @foreach($langs as $code => $info)
+          <a href="{{ route('locale.switch', $code) }}"
+             class="px-3 py-2 rounded-lg text-sm font-semibold transition-colors {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/20 text-white hover:bg-white/30' }}">
+            {{ $info['flag'] }} {{ strtoupper($code) }}
+          </a>
+        @endforeach
+      </div>
+    </div>
+
+    <a href="/faq" onclick="closeMenu()"
+       class="flex items-center justify-center gap-2 w-full bg-[var(--color-gold)] text-[var(--color-navy)] text-sm font-bold py-3.5 rounded-xl shadow-lg hover:bg-[var(--color-gold-dark)] transition-all">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+      </svg>
+      <span>{{ __('site.nav_help') }}</span>
+    </a>
+  </div>
+</div>
