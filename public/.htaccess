@@ -73,7 +73,7 @@
     </FilesMatch>
     # No cache for HTML
     <FilesMatch "\.(html|php)$">
-        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Cache-Control "no-cache, must-revalidate"
     </FilesMatch>
     # Security headers
     Header always set X-Content-Type-Options "nosniff"

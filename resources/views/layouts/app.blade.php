@@ -128,10 +128,13 @@
   {{-- ─── LCP Hero Image Preload ───────────────────────── --}}
   <link rel="preload" as="image" href="/img/hero-bali.webp" fetchpriority="high" type="image/webp">
 
-  {{-- ─── Font Awesome (non-blocking) ─────────────────── --}}
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
-    integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  {{-- ─── Font Awesome (CSS version - faster) ─────────── --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </noscript>
   <style>
     /* Prevent icon flash (FA SVG approach) */
     .fa-svg-icon { height: 1em; width: auto; display: inline-block; vertical-align: -0.125em; }
