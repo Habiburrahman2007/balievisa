@@ -9,7 +9,7 @@
         {{-- Brand --}}
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <img src="/images/logo-visa.png" class="w-14 h-14 object-contain" alt="Bali E Visa Logo" width="56" height="56" loading="lazy">
+            <img src="/images/logo-visa.webp" class="w-14 h-14 object-contain" alt="Bali E Visa Logo" width="56" height="56" loading="lazy">
             <div>
               <span class="text-base font-bold text-white block">Bali E Visa</span>
               <span class="text-[0.7rem] text-[var(--color-gold)] font-medium">{{ __('site.nav_portal') }}</span>

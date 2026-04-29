@@ -20,7 +20,7 @@
     {{-- LCP image: use real <img> so the <link rel=preload> in <head> is matched --}}
     <img
       id="hero-img"
-      src="/img/hero-bali.jpg"
+      src="/img/hero-bali.webp"
       alt=""
       aria-hidden="true"
       width="1440"
@@ -200,7 +200,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-6">
 
         <div class="relative rounded-3xl overflow-hidden p-8 flex flex-col justify-end text-white min-h-[250px]">
-          <img src="/img/hero-bali.jpg" alt="Sunset" width="800" height="500" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+          <img src="/img/hero-bali.webp" alt="Sunset" width="800" height="500" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40"></div>
           <div class="relative z-10 w-full">
             <h2 class="text-2xl font-bold mb-2">{{ __('site.dont_wait') }}</h2>
@@ -331,7 +331,7 @@
         @foreach($latestNews as $article)
         <article class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-1 hover:shadow-lg flex flex-col h-full group">
           <div class="w-full aspect-video overflow-hidden relative">
-            <img src="{{ $article->image ? asset('storage/' . $article->image) : '/img/hero-bali.jpg' }}" alt="{{ $article->title }}" width="640" height="360" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <img src="{{ $article->image ? asset('storage/' . preg_replace('/\\.(jpg|jpeg|png)$/i', '.webp', $article->image)) : '/img/hero-bali.webp' }}" alt="{{ $article->title }}" width="640" height="360" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
           <div class="p-6 flex flex-col flex-1">

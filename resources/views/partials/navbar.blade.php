@@ -16,7 +16,7 @@
       <div class="flex items-center gap-10 h-full">
         {{-- Logo --}}
         <a href="/" class="flex items-center gap-3 shrink-0" id="logo" aria-label="Bali E Visa Home">
-          <img src="/images/logo-visa.png" class="w-12 h-12 object-contain" alt="Bali E Visa Logo" width="48" height="48" loading="eager" fetchpriority="high">
+          <img src="/images/logo-visa.webp" class="w-12 h-12 object-contain" alt="Bali E Visa Logo" width="48" height="48" loading="eager" fetchpriority="high">
           <div class="flex flex-col">
             <span class="font-bold text-base text-[var(--color-navy)] leading-tight">Bali E Visa</span>
             <span class="text-[0.65rem] text-slate-600 font-medium leading-tight hidden sm:block">
@@ -225,7 +225,7 @@
   {{-- HEADER --}}
   <div class="flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
     <a href="/" class="flex items-center gap-3" onclick="closeMenu()">
-      <img src="/images/logo-visa.png" class="w-10 h-10 object-contain" alt="Logo">
+      <img src="/images/logo-visa.webp" class="w-10 h-10 object-contain" alt="Logo">
       <div class="flex flex-col">
         <p class="text-white font-bold leading-tight">Bali E Visa</p>
         <p class="text-white/60 text-[0.65rem] leading-tight">{{ __('site.nav_portal') }}</p>

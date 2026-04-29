@@ -126,7 +126,7 @@
   </style>
 
   {{-- ─── LCP Hero Image Preload ───────────────────────── --}}
-  <link rel="preload" as="image" href="/img/hero-bali.jpg" fetchpriority="high" type="image/jpeg">
+  <link rel="preload" as="image" href="/img/hero-bali.webp" fetchpriority="high" type="image/webp">
 
   {{-- ─── Font Awesome (non-blocking) ─────────────────── --}}
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
