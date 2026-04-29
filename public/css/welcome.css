@@ -2,8 +2,14 @@
    Immigration Portal – Global Styles
    ═══════════════════════════════════════════════════════════════ */
 
+/* Smooth scroll only for users/devices that support it without jank */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+  }
+}
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 120px;
 }
 
@@ -74,6 +80,11 @@ body {
 
 .faq-item.open .faq-a {
   max-height: 300px;
+  will-change: max-height;
+}
+
+.faq-item .faq-a {
+  will-change: auto;
 }
 
 /* ── High Contrast Mode ────────────────────────────────────── */

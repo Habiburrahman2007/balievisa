@@ -30,15 +30,15 @@
       decoding="async"
     >
     <div id="hero-overlay"></div>
-    {{-- Decorative glows: composited-only, no layout impact --}}
+    {{-- Decorative glows: GPU-composited, size-contained, zero layout impact --}}
     <div
-      class="absolute w-[500px] h-[500px] -right-[80px] top-1/2 -translate-y-1/2 pointer-events-none"
-      style="background:radial-gradient(circle,rgba(255,193,7,0.08) 0%,transparent 70%);will-change:transform;"
+      class="absolute pointer-events-none"
+      style="width:min(500px,70vw);height:min(500px,70vw);right:0;top:50%;transform:translate(10%,-50%) translateZ(0);background:radial-gradient(circle,rgba(255,193,7,0.08) 0%,transparent 70%);contain:strict;"
       aria-hidden="true">
     </div>
     <div
-      class="absolute w-[300px] h-[300px] left-[10%] bottom-[10%] pointer-events-none"
-      style="background:radial-gradient(circle,rgba(255,193,7,0.06) 0%,transparent 70%);will-change:transform;"
+      class="absolute pointer-events-none"
+      style="width:min(300px,45vw);height:min(300px,45vw);left:10%;bottom:10%;transform:translateZ(0);background:radial-gradient(circle,rgba(255,193,7,0.06) 0%,transparent 70%);contain:strict;"
       aria-hidden="true">
     </div>
 
@@ -123,7 +123,7 @@
   {{-- ═══════════════════════════════════════════ NEW LAYOUT SECTIONS ═══ --}}
   <div class="bg-gray-50 pb-20">
     {{-- TOP CARDS --}}
-    <section class="max-w-[1200px] mx-auto px-6 pt-10 pb-8">
+    <section class="cv-auto max-w-[1200px] mx-auto px-6 pt-10 pb-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div
           class="bg-white rounded-2xl p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col h-full">
@@ -196,7 +196,7 @@
 
 
     {{-- DON'T WAIT & REVIEWS --}}
-    <section class="max-w-[1200px] mx-auto px-6 mb-12">
+    <section class="cv-auto max-w-[1200px] mx-auto px-6 mb-12">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-6">
 
         <div class="relative rounded-3xl overflow-hidden p-8 flex flex-col justify-end text-white min-h-[250px]">
@@ -315,7 +315,7 @@
 
     {{-- LATEST NEWS --}}
     @if(isset($latestNews) && $latestNews->isNotEmpty())
-    <section class="max-w-[1200px] mx-auto px-6 mb-12">
+    <section class="cv-auto max-w-[1200px] mx-auto px-6 mb-12">
       <div class="flex items-end justify-between mb-8">
         <div>
           <h2 class="text-3xl font-extrabold text-slate-900 mb-2">{{ __('site.news_title') }}</h2>

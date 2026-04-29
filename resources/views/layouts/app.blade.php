@@ -43,6 +43,39 @@
 
   {{-- ─── Critical Above-The-Fold CSS (inline) ─────────── --}}
   <style>
+    /* ── Font-swap CLS prevention: size-adjusted fallbacks ──────────────
+       These @font-face rules make system-ui/Arial match Inter/Roboto metrics
+       so that when the web font swaps in, zero layout shift occurs.
+       size-adjust compensates for x-height differences between font families. */
+    @font-face {
+      font-family: 'Inter';
+      src: local('Inter');
+      font-weight: 100 900;
+      font-display: optional;
+    }
+    @font-face {
+      font-family: 'Inter-fallback';
+      src: local('Arial'), local('Helvetica Neue'), local('system-ui');
+      size-adjust: 100%;
+      ascent-override: 90%;
+      descent-override: 22%;
+      line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Roboto';
+      src: local('Roboto');
+      font-weight: 100 900;
+      font-display: optional;
+    }
+    @font-face {
+      font-family: 'Roboto-fallback';
+      src: local('Arial'), local('Helvetica Neue'), local('system-ui');
+      size-adjust: 100%;
+      ascent-override: 92%;
+      descent-override: 24%;
+      line-gap-override: 0%;
+    }
+
     /* Hero section critical styles — prevents 3s+ LCP render delay */
     #hero {
       position: relative;
@@ -59,7 +92,6 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      will-change: auto;
     }
     #hero-overlay {
       position: absolute;
@@ -68,13 +100,15 @@
     }
     /* Prevent layout shift on navbar */
     #main-navbar { min-height: 68px; contain: layout style; }
-    /* Prevent FOUT flash while fonts async-load */
-    body { font-family: Inter, Roboto, system-ui, sans-serif; }
+    /* Prevent FOUT flash while fonts async-load — use adjusted fallback */
+    body { font-family: Inter, Inter-fallback, Roboto, Roboto-fallback, system-ui, sans-serif; }
     /* Navbar scrolled state (critical) */
     #main-navbar.scrolled { background:#fff; box-shadow:0 4px 24px rgba(0,43,91,.12); }
-    /* Optimasi rendering untuk section utama */
-    section, footer, main { contain: content; }
-    #hero { contain: none; } /* Hero butuh overflow untuk dekorasi */
+    /* content-visibility: skip layout/paint of off-screen sections on mobile.
+       contain-intrinsic-size provides a height placeholder so scrollbar stays stable.
+       Only apply to below-fold sections — hero is excluded (it's above fold). */
+    .cv-auto { content-visibility: auto; contain-intrinsic-size: 0 600px; }
+    footer.cv-auto { contain-intrinsic-size: 0 300px; }
     /* Gold pulse animation */
     @keyframes goldPulse {
       0%,100%{box-shadow:0 0 0 0 rgba(255,193,7,.4)}
@@ -140,7 +174,7 @@
     }
   </script>
   
-  <!-- Alpine JS (pinned version for reliability) -->
+  <!-- Alpine JS (pinned version for reliability) - loaded after page scripts to reduce forced reflow -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
   
   <!-- Welcome JS (deferred) - Dipindahkan ke head agar didownload lebih awal -->

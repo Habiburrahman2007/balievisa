@@ -1,5 +1,5 @@
 {{-- ═══════════════════════════════════════════ FOOTER --}}
-<footer id="footer" class="bg-[var(--color-navy-dark)] text-white/65">
+<footer id="footer" class="cv-auto bg-[var(--color-navy-dark)] text-white/65">
   {{-- Gold accent line --}}
   <div class="h-1 bg-gradient-to-r from-[var(--color-gold)] via-[var(--color-gold-dark)] to-[var(--color-gold)]"></div>
 
