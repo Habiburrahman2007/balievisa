@@ -9,7 +9,7 @@
   <meta name="description" content="@yield('meta_description', __('site.hero_subtitle'))">
   <meta name="keywords"
     content="@yield('meta_keywords', 'Indonesia e-Visa on Arrival, e-VOA, Apply Visa for Bali, Bali Tourist Levy, Fast Bali Visa Service, Bali Visa Consultation, Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Immigration Rules')">
-  <link rel="canonical" href="{{ request()->fullUrl() }}">
+  <link rel="canonical" href="{{ url()->current() }}{{ request()->has('lang') ? '?lang=' . request()->query('lang') : '' }}">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ request()->fullUrl() }}">

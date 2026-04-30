@@ -10,11 +10,20 @@ class SetLocale
 {
     public function handle(Request $request, Closure $next)
     {
-        $locale = $request->session()->get('locale', config('app.locale', 'en'));
-
-        if (in_array($locale, ['en', 'zh', 'es', 'ar', 'hi'])) {
-            App::setLocale($locale);
+        $supportedLocales = ['en', 'zh', 'es', 'ar', 'hi'];
+        
+        // 1. Check query parameter (priority for SEO/crawlers)
+        $lang = $request->query('lang');
+        
+        // 2. Check session
+        if (!$lang) {
+            $lang = $request->session()->get('locale');
         }
+
+        // 3. Fallback to config
+        $locale = in_array($lang, $supportedLocales) ? $lang : config('app.locale', 'en');
+
+        App::setLocale($locale);
 
         return $next($request);
     }

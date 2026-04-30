@@ -15,8 +15,8 @@ class PageCache
             return $next($request);
         }
 
-        // Generate a cache key based on URL and locale
-        $locale = session()->get('locale', config('app.locale', 'en'));
+        // Generate a cache key based on URL and current app locale
+        $locale = \Illuminate\Support\Facades\App::getLocale();
         $key = 'page_cache_' . md5($request->fullUrl() . '_' . $locale);
 
         // Try to get from cache
