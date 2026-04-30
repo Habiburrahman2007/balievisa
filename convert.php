@@ -6,17 +6,13 @@
  * It also scans the articles storage for optimization.
  */
 
-// 1. Static Assets
+// 1. Static Assets — uses indexed array so one source can have multiple outputs
 $staticFiles = [
-    'public/img/hero-bali.jpg' => [
-        'dest' => 'public/img/hero-bali.webp',
-        'quality' => 80
-    ],
-    'public/images/logo-visa.png' => [
-        'dest' => 'public/images/logo-visa.webp',
-        'quality' => 90,
-        'resize' => [128, 128] // Resize logo since it was reported too large
-    ],
+    ['src' => 'public/img/hero-bali.jpg', 'dest' => 'public/img/hero-bali.webp', 'quality' => 60],
+    ['src' => 'public/img/hero-bali.jpg', 'dest' => 'public/img/hero-bali-mobile.webp', 'quality' => 55, 'resize' => [800, 500]],
+    ['src' => 'public/img/blog-egate.jpg', 'dest' => 'public/img/blog-egate.webp', 'quality' => 65],
+    ['src' => 'public/img/blog-hidden-gems.jpg', 'dest' => 'public/img/blog-hidden-gems.webp', 'quality' => 65],
+    ['src' => 'public/images/logo-visa.png', 'dest' => 'public/images/logo-visa.webp', 'quality' => 90, 'resize' => [128, 128]],
 ];
 
 // 2. Scan Articles
@@ -30,7 +26,8 @@ if (is_dir($articleDir)) {
                 $path = $file->getPathname();
                 $dest = preg_replace('/\.(jpg|jpeg|png)$/i', '.webp', $path);
                 if (!file_exists($dest)) {
-                    $staticFiles[$path] = [
+                    $staticFiles[] = [
+                        'src' => $path,
                         'dest' => $dest,
                         'quality' => 75
                     ];
@@ -40,7 +37,8 @@ if (is_dir($articleDir)) {
     }
 }
 
-foreach ($staticFiles as $src => $config) {
+foreach ($staticFiles as $config) {
+    $src = $config['src'];
     if (!file_exists($src)) {
         echo "File not found: $src\n";
         continue;
@@ -83,3 +81,4 @@ foreach ($staticFiles as $src => $config) {
     }
 }
 echo "Optimization complete.\n";
+

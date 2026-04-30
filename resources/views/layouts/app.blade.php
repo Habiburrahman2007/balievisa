@@ -31,7 +31,7 @@
   <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
 
   @if(request()->is('/'))
-    <link rel="preload" as="image" href="/img/hero-bali.webp" imagesrcset="/img/hero-bali-mobile.webp 800w, /img/hero-bali.webp 1440w" imagesizes="100vw" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/hero-bali.webp" imagesrcset="/img/hero-bali-mobile.webp 800w, /img/hero-bali.webp 1440w" imagesizes="100vw" fetchpriority="high" type="image/webp">
   @endif
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,9 +128,6 @@
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
     .animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}
   </style>
-
-  {{-- ─── LCP Hero Image Preload ───────────────────────── --}}
-  <link rel="preload" as="image" href="/img/hero-bali.webp" fetchpriority="high" type="image/webp">
 
   {{-- ─── Font Awesome (CSS version - faster) ─────────── --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
