@@ -21,6 +21,8 @@
     <img
       id="hero-img"
       src="/img/hero-bali.webp"
+      srcset="/img/hero-bali-mobile.webp 800w, /img/hero-bali.webp 1440w"
+      sizes="100vw"
       alt=""
       aria-hidden="true"
       width="1440"

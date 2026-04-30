@@ -12,39 +12,39 @@ Route::get('/', function () {
             ->get();
     });
     return view('welcome', compact('latestNews'));
-});
+})->middleware('page_cache');
 
 Route::get('/arrival-card', function () {
     return view('arrival-card');
-})->name('arrival-card');
+})->name('arrival-card')->middleware('page_cache');
 
 Route::get('/bali-levy', function () {
     return view('bali-levy');
-})->name('bali-levy');
+})->name('bali-levy')->middleware('page_cache');
 
 Route::get('/visa', function () {
     return view('visa');
-})->name('visa');
+})->name('visa')->middleware('page_cache');
 
 Route::get('/steps', function () {
     return view('steps');
-})->name('steps');
+})->name('steps')->middleware('page_cache');
 
 Route::get('/faq', function () {
     return view('faq');
-})->name('faq');
+})->name('faq')->middleware('page_cache');
 
 Route::get('/privacy-policy', function () {
     return view('privacy');
-})->name('privacy-policy');
+})->name('privacy-policy')->middleware('page_cache');
 
 Route::get('/refund-policy', function () {
     return view('refund');
-})->name('refund-policy');
+})->name('refund-policy')->middleware('page_cache');
 
 Route::get('/terms-and-conditions', function () {
     return view('terms');
-})->name('terms-and-conditions');
+})->name('terms-and-conditions')->middleware('page_cache');
 
 Route::get('/news', function () {
     $articles = cache()->remember('all_articles_v2', 3600, function () {
@@ -54,7 +54,7 @@ Route::get('/news', function () {
             ->get();
     });
     return view('blog', compact('articles'));
-})->name('news');
+})->name('news')->middleware('page_cache');
 
 Route::get('/news/{slug}', function ($slug) {
     $article = Article::where('slug', $slug)
