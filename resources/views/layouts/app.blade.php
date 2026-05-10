@@ -11,6 +11,17 @@
     content="@yield('meta_keywords', 'Indonesia e-Visa on Arrival, e-VOA, Apply Visa for Bali, Bali Tourist Levy, Fast Bali Visa Service, Bali Visa Consultation, Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Immigration Rules')">
   <link rel="canonical" href="{{ url()->current() }}{{ request()->has('lang') ? '?lang=' . request()->query('lang') : '' }}">
 
+  @if(request()->is('/'))
+    <link rel="preload" as="image" href="/img/hero-bali.webp" imagesrcset="/img/hero-bali-mobile.webp 800w, /img/hero-bali.webp 1440w" imagesizes="100vw" fetchpriority="high" type="image/webp">
+  @endif
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ request()->fullUrl() }}">
   <meta property="og:title" content="@yield('title', __('site.nav_portal'))">
@@ -30,12 +41,6 @@
   <link rel="alternate" hreflang="hi" href="{{ url()->current() }}?lang=hi">
   <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
 
-  @if(request()->is('/'))
-    <link rel="preload" as="image" href="/img/hero-bali.webp" imagesrcset="/img/hero-bali-mobile.webp 800w, /img/hero-bali.webp 1440w" imagesizes="100vw" fetchpriority="high" type="image/webp">
-  @endif
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
@@ -154,18 +159,34 @@
   {{-- ─── Extra Header Content ─────────────────────────── --}}
   @yield('head_extra')
 
-  <!-- Google tag (gtag.js) - deferred to not block render -->
+  <!-- Google tag (gtag.js) - Optimized: Load on interaction or 4s delay -->
   <script>
-    window.addEventListener('load', function() {
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-W9S0JHC6XS';
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W9S0JHC6XS');
-    });
+    (function() {
+      var gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-W9S0JHC6XS';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W9S0JHC6XS');
+      }
+      
+      // Load after 4 seconds if no interaction
+      var gtmTimeout = setTimeout(loadGTM, 4000);
+      
+      // Load on interaction
+      ['mousemove', 'scroll', 'touchstart', 'keydown'].forEach(function(event) {
+        window.addEventListener(event, function() {
+          clearTimeout(gtmTimeout);
+          loadGTM();
+        }, { once: true, passive: true });
+      });
+    })();
   </script>
 
   <!-- Structured Data: Organization Logo -->

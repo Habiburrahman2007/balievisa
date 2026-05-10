@@ -29,7 +29,7 @@
       height="900"
       fetchpriority="high"
       loading="eager"
-      decoding="async"
+      decoding="sync"
     >
     <div id="hero-overlay"></div>
     {{-- Decorative glows: GPU-composited, size-contained, zero layout impact --}}
