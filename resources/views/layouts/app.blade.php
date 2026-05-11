@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  @yield('preload')
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
 
   <title>@yield('title', __('site.nav_portal') . ' | ' . __('site.nav_portal_sub'))</title>
@@ -10,10 +11,6 @@
   <meta name="keywords"
     content="@yield('meta_keywords', 'Indonesia e-Visa on Arrival, e-VOA, Apply Visa for Bali, Bali Tourist Levy, Fast Bali Visa Service, Bali Visa Consultation, Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Immigration Rules')">
   <link rel="canonical" href="{{ url()->current() }}{{ request()->has('lang') ? '?lang=' . request()->query('lang') : '' }}">
-
-  @if(request()->is('/'))
-    <link rel="preload" as="image" href="/img/hero-bali.webp" imagesrcset="/img/hero-bali-mobile.webp 800w, /img/hero-bali.webp 1440w" imagesizes="100vw" fetchpriority="high" type="image/webp">
-  @endif
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

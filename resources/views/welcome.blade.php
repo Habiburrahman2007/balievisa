@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('preload')
+  <link rel="preload" as="image" href="/img/hero-bali-mobile.webp" imagesrcset="/img/hero-bali-mobile.webp 800w, /img/hero-bali.webp 1440w" imagesizes="100vw" fetchpriority="high">
+@endsection
+
 @section('title', 'Indonesia e-Visa on Arrival (e-VOA) | Apply Visa for Bali & Tourist Levy')
 @section('meta_description', 'Official Bali E-Visa Portal. Fast Bali Visa Service & Consultation. Apply for Indonesia e-Visa on Arrival (e-VOA), Bali Tourist Levy Payment, and Indonesia Arrival Card.')
 @section('meta_keywords', 'Indonesia e-Visa on Arrival, e-VOA, Apply Visa for Bali, Bali Tourist Levy Payment, Fast Bali Visa Service, Bali Visa Consultation, Indonesia Arrival Card, Indonesia Custom Declaration, e-CD, Bali Visa on Arrival Requirements, Electronic Visa Indonesia, Bali Immigration Rules')
