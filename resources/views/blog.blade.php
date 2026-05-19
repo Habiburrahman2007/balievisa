@@ -15,7 +15,7 @@
         @forelse($articles as $article)
         <article class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-2 hover:shadow-[0_12px_30px_-4px_rgba(0,0,0,0.1)] flex flex-col h-full group">
           <div class="w-full aspect-video overflow-hidden relative">
-            <img src="{{ $article->image ? asset('storage/' . $article->image) : '/img/hero-bali.png' }}" alt="{{ $article->title }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <img src="{{ $article->image_url }}" alt="{{ $article->title }}" width="640" height="360" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
           </div>
           <div class="p-7 flex flex-col flex-1">

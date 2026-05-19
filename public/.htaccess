@@ -75,9 +75,13 @@
     <FilesMatch "\.(html|php)$">
         Header set Cache-Control "no-cache, must-revalidate"
     </FilesMatch>
+    # Vary: Accept-Encoding — tells CDNs/proxies to cache gzip & uncompressed separately
+    Header append Vary "Accept-Encoding" env=!dont-vary
     # Security headers
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Keep-Alive: reduce TCP handshake overhead for repeat requests
+    Header set Connection "keep-alive"
 </IfModule>
 

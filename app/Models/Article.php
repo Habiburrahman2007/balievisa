@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\URL;
 
 class Article extends Model
 {
@@ -21,4 +22,21 @@ class Article extends Model
         'is_published' => 'boolean',
         'published_at' => 'datetime',
     ];
+
+    /**
+     * Get the public URL for the article's thumbnail image.
+     *
+     * Returns the original uploaded file URL (jpg/png).
+     * Falls back to the default hero image if no image is set.
+     * Note: .webp conversion is not done on upload, so we serve originals directly.
+     */
+    public function getImageUrlAttribute(): string
+    {
+        if (!$this->image) {
+            return '/img/hero-bali-mobile.webp';
+        }
+
+        return URL::asset('storage/' . $this->image);
+    }
 }
+

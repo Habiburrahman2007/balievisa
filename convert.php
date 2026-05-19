@@ -8,8 +8,8 @@
 
 // 1. Static Assets — uses indexed array so one source can have multiple outputs
 $staticFiles = [
-    ['src' => 'public/img/hero-bali.jpg', 'dest' => 'public/img/hero-bali.webp', 'quality' => 50],
-    ['src' => 'public/img/hero-bali.jpg', 'dest' => 'public/img/hero-bali-mobile.webp', 'quality' => 25, 'resize' => [800, 500]],
+    ['src' => 'public/img/hero-bali.jpg', 'dest' => 'public/img/hero-bali.webp', 'quality' => 30],
+    ['src' => 'public/img/hero-bali.jpg', 'dest' => 'public/img/hero-bali-mobile.webp', 'quality' => 15, 'resize' => [800, 500]],
     ['src' => 'public/img/blog-egate.jpg', 'dest' => 'public/img/blog-egate.webp', 'quality' => 65],
     ['src' => 'public/img/blog-hidden-gems.jpg', 'dest' => 'public/img/blog-hidden-gems.webp', 'quality' => 65],
     ['src' => 'public/images/logo-visa.png', 'dest' => 'public/images/logo-visa.webp', 'quality' => 90, 'resize' => [128, 128]],

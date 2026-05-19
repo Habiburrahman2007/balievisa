@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('preload')
-  <link rel="preload" as="image" href="/img/hero-bali-mobile.webp" imagesrcset="/img/hero-bali-mobile.webp 800w, /img/hero-bali.webp 1440w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" href="/img/hero-bali.webp" imagesrcset="/img/hero-bali-mobile.webp 800w, /img/hero-bali.webp 1440w" imagesizes="100vw" fetchpriority="high">
 @endsection
 
 @section('title', 'Indonesia e-Visa on Arrival (e-VOA) | Apply Visa for Bali & Tourist Levy')
@@ -99,7 +99,7 @@
         </div>
 
         {{-- Right: Stats Box --}}
-        <div class="bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl p-6 flex flex-col gap-5">
+        <div class="bg-white/15 border border-white/20 rounded-2xl p-6 flex flex-col gap-5">
           <div class="text-center border-b border-white/15 pb-4">
             <div class="text-[2.5rem] font-extrabold text-white leading-none" data-count-target="5000"
               data-count-suffix="+" data-count-separator>0</div>
@@ -206,7 +206,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-6">
 
         <div class="relative rounded-3xl overflow-hidden p-8 flex flex-col justify-end text-white min-h-[250px]">
-          <img src="/img/hero-bali.webp" alt="Sunset" width="800" height="500" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+          <img src="/img/hero-bali-mobile.webp" alt="Sunset" width="800" height="500" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40"></div>
           <div class="relative z-10 w-full">
             <h2 class="text-2xl font-bold mb-2">{{ __('site.dont_wait') }}</h2>
@@ -337,7 +337,7 @@
         @foreach($latestNews as $article)
         <article class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-1 hover:shadow-lg flex flex-col h-full group">
           <div class="w-full aspect-video overflow-hidden relative">
-            <img src="{{ $article->image ? asset('storage/' . preg_replace('/\\.(jpg|jpeg|png)$/i', '.webp', $article->image)) : '/img/hero-bali.webp' }}" alt="{{ $article->title }}" width="640" height="360" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <img src="{{ $article->image_url }}" alt="{{ $article->title }}" width="640" height="360" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
           <div class="p-6 flex flex-col flex-1">
