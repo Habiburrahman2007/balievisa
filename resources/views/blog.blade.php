@@ -13,7 +13,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @forelse($articles as $article)
-        <article class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-2 hover:shadow-[0_12px_30px_-4px_rgba(0,0,0,0.1)] flex flex-col h-full group">
+        <article class="relative bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-2 hover:shadow-[0_12px_30px_-4px_rgba(0,0,0,0.1)] flex flex-col h-full group">
           <div class="w-full aspect-video overflow-hidden relative">
             <img src="{{ $article->image_url }}" alt="{{ $article->title }}" width="640" height="360" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
@@ -27,12 +27,17 @@
               <span class="text-slate-400">&bull;</span>
               <span>{{ $article->published_at ? $article->published_at->format('F d, Y') : $article->created_at->format('F d, Y') }}</span>
             </div>
-            <h2 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">{{ $article->title }}</h2>
+            <h2 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">
+              <a href="{{ route('news.detail', $article->slug) }}" class="focus:outline-none">
+                <span class="absolute inset-0" aria-hidden="true"></span>
+                {{ $article->title }}
+              </a>
+            </h2>
             <p class="text-slate-600 text-sm mb-6 flex-1 line-clamp-3 leading-relaxed">{{ $article->excerpt }}</p>
-            <a href="{{ route('news.detail', $article->slug) }}" class="inline-flex items-center gap-1.5 text-blue-600 font-bold text-sm mt-auto max-w-max pb-1 border-b-2 border-transparent hover:border-blue-600 transition-all">
+            <span class="inline-flex items-center gap-1.5 text-blue-600 font-bold text-sm mt-auto max-w-max pb-1 border-b-2 border-transparent transition-all">
               Read Article
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="group-hover:translate-x-1.5 transition-transform" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
+            </span>
           </div>
         </article>
         @empty

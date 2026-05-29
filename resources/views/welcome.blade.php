@@ -19,9 +19,9 @@
 @endsection
 
 @section('content')
-  {{-- ═══════════════════════════════════════════ HERO ═══ --}}
+  
   <section id="hero" class="relative min-h-[85vh] flex items-center overflow-hidden bg-[var(--color-navy)]">
-    {{-- LCP image: use real <img> so the <link rel=preload> in <head> is matched --}}
+    
     <img
       id="hero-img"
       src="/img/hero-bali.webp"
@@ -36,7 +36,7 @@
       decoding="sync"
     >
     <div id="hero-overlay"></div>
-    {{-- Decorative glows: GPU-composited, size-contained, zero layout impact --}}
+    
     <div
       class="absolute pointer-events-none"
       style="width:min(500px,70vw);height:min(500px,70vw);right:0;top:50%;transform:translate(10%,-50%) translateZ(0);background:radial-gradient(circle,rgba(255,193,7,0.08) 0%,transparent 70%);contain:strict;"
@@ -51,7 +51,7 @@
     <div class="max-w-[1200px] mx-auto px-6 relative z-10 py-20">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 items-center">
 
-        {{-- Left: Text Content --}}
+        
         <div>
           <div
             class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 px-4 py-1.5 rounded-full text-[0.8rem] font-semibold tracking-wider uppercase mb-7">
@@ -70,7 +70,7 @@
             {{ __('site.hero_subtitle') }}
           </p>
 
-          {{-- Entrance text --}}
+          
           <div class="inline-flex items-center gap-3 bg-white/10 border border-white/15 rounded-xl px-5 py-3 mb-9">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -98,7 +98,7 @@
           </div>
         </div>
 
-        {{-- Right: Stats Box --}}
+        
         <div class="bg-white/15 border border-white/20 rounded-2xl p-6 flex flex-col gap-5">
           <div class="text-center border-b border-white/15 pb-4">
             <div class="text-[2.5rem] font-extrabold text-white leading-none" data-count-target="5000"
@@ -126,9 +126,9 @@
     </div>
   </section>
 
-  {{-- ═══════════════════════════════════════════ NEW LAYOUT SECTIONS ═══ --}}
+  
   <div class="bg-gray-50 pb-20">
-    {{-- TOP CARDS --}}
+    
     <section class="cv-auto max-w-[1200px] mx-auto px-6 pt-10 pb-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div
@@ -201,7 +201,7 @@
     </section>
 
 
-    {{-- DON'T WAIT & REVIEWS --}}
+    
     <section class="cv-auto max-w-[1200px] mx-auto px-6 mb-12">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-6">
 
@@ -319,7 +319,7 @@
       </div>
     </section>
 
-    {{-- LATEST NEWS --}}
+    
     @if(isset($latestNews) && $latestNews->isNotEmpty())
     <section class="cv-auto max-w-[1200px] mx-auto px-6 mb-12">
       <div class="flex items-end justify-between mb-8">
@@ -335,7 +335,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach($latestNews as $article)
-        <article class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-1 hover:shadow-lg flex flex-col h-full group">
+        <article class="relative bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-1 hover:shadow-lg flex flex-col h-full group">
           <div class="w-full aspect-video overflow-hidden relative">
             <img src="{{ $article->image_url }}" alt="{{ $article->title }}" width="640" height="360" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>

@@ -23,13 +23,13 @@ class Article extends Model
         'published_at' => 'datetime',
     ];
 
-    /**
-     * Get the public URL for the article's thumbnail image.
-     *
-     * Returns the original uploaded file URL (jpg/png).
-     * Falls back to the default hero image if no image is set.
-     * Note: .webp conversion is not done on upload, so we serve originals directly.
-     */
+    
+
+
+
+
+
+
     public function getImageUrlAttribute(): string
     {
         if (!$this->image) {

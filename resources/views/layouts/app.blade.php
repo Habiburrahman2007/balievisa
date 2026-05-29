@@ -38,11 +38,15 @@
   <link rel="alternate" hreflang="hi" href="{{ url()->current() }}?lang=hi">
   <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap">
+  </noscript>
 
   @vite(['resources/css/app.css'])
 
-  {{-- ─── Critical Above-The-Fold CSS (inline) ─────────── --}}
+  
   <style>
     /* ── Font-swap CLS prevention: size-adjusted fallbacks ──────────────
        These @font-face rules make system-ui/Arial match Inter/Roboto metrics
@@ -113,7 +117,7 @@
     /* NOTE: goldPulse, reveal, animate-pulse rules live in welcome.css — no duplication here */
   </style>
 
-  {{-- ─── Font Awesome (CSS version - loaded only on subpages that need it) ─────────── --}}
+  
   @if(!request()->is('/'))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -124,8 +128,12 @@
     .fa-svg-icon { height: 1em; width: auto; display: inline-block; vertical-align: -0.125em; }
   </style>
 
-  {{-- ─── Welcome CSS ─────── --}}
-  <link rel="stylesheet" href="/css/welcome.css">
+  
+  <link rel="preload" as="style" href="/css/welcome.css">
+  <link rel="stylesheet" href="/css/welcome.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/css/welcome.css">
+  </noscript>
   <!-- Favicon for Google Search and standard browsers -->
   <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('images/favicon-48.png') }}">
@@ -133,7 +141,7 @@
   <link rel="apple-touch-icon" href="{{ asset('images/logo-visa.png') }}">
   <meta name="google-site-verification" content="v3a4GIxrzeL_-CREGIxh637YuJXf8SUANTbLrCCQ45c" />
 
-  {{-- ─── Extra Header Content ─────────────────────────── --}}
+  
   @yield('head_extra')
 
   <!-- Google tag (gtag.js) - Optimized: Load on interaction or 4s delay -->
@@ -193,7 +201,7 @@
 
   @include('partials.footer')
 
-  {{-- ═══ Back to Top Button ═══ --}}
+  
   <button id="back-to-top"
     class="fixed bottom-6 right-6 z-[9999] w-12 h-12 rounded-full bg-[var(--color-navy)] text-white border-2 border-[var(--color-gold)] flex items-center justify-center cursor-pointer shadow-[0_4px_20px_rgba(0,43,91,0.3)] transition-all hover:scale-110 hover:shadow-[0_6px_28px_rgba(0,43,91,0.4)] opacity-0 pointer-events-none"
     aria-label="Back to top" title="Back to top">

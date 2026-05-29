@@ -1,4 +1,4 @@
-{{-- ═══════════════════════════════════════════ MAIN NAVBAR --}}
+
 @php
   $langs = [
     'en' => ['label' => 'English', 'flag' => '🇬🇧'],
@@ -14,7 +14,7 @@
     <div class="flex items-center justify-between h-[68px] gap-6">
 
       <div class="flex items-center gap-10 h-full">
-        {{-- Logo --}}
+        
         <a href="/" class="flex items-center gap-3 shrink-0" id="logo" aria-label="Bali E Visa Home">
           <img src="/images/logo-visa.webp" class="w-12 h-12 object-contain" alt="Bali E Visa Logo" width="48" height="48" loading="eager" fetchpriority="high">
           <div class="flex flex-col">
@@ -25,7 +25,7 @@
           </div>
         </a>
 
-        {{-- Desktop Menu: Hidden on all screens as requested --}}
+        
         <ul class="hidden items-center gap-8 xl:gap-12">
           <li>
             <a href="/"
@@ -54,10 +54,10 @@
         </ul>
       </div>
 
-      {{-- Right-side --}}
+      
       <div class="flex items-center gap-3">
 
-        {{-- Mobile Toggle: Visible on mobile/tablet, hidden on laptop/desktop --}}
+        
         <button id="mobile-toggle"
           class="flex lg:hidden items-center justify-center w-10 h-10 bg-slate-100 text-[var(--color-navy)] rounded-full transition-all hover:bg-slate-200 cursor-pointer"
           aria-label="Toggle menu">
@@ -69,7 +69,7 @@
           </svg>
         </button>
 
-        {{-- Language Dropdown: Sembunyi di mobile, muncul di MD ke atas --}}
+        
         <div class="relative hidden lg:block" id="lang-dropdown-wrap">
           <button id="lang-dropdown-btn" type="button" aria-label="Select Language"
             class="inline-flex items-center gap-1.5 bg-slate-100 text-[var(--color-navy)] text-sm font-semibold px-4 py-2.5 rounded-full transition-all hover:bg-slate-200 cursor-pointer">
@@ -104,7 +104,7 @@
           </div>
         </div>
 
-        {{-- Help Button: hidden on mobile, visible md+ --}}
+        
         <a href="/faq"
           class="hidden lg:inline-flex shrink-0 whitespace-nowrap items-center gap-2 bg-[var(--color-navy)] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,43,91,0.35)] shadow-[0_4px_12px_rgba(0,43,91,0.2)]">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
@@ -155,8 +155,8 @@
   </script>
 </nav>
 
-{{-- MOBILE NAVIGATION OVERLAY — outside <nav> so position:fixed works correctly --}}
-{{-- The nav has CSS containment (contain: layout style) which traps fixed children --}}
+
+
 <style>
   #nav-links {
     position: fixed;
@@ -222,7 +222,7 @@
 <div id="nav-backdrop" onclick="closeMenu()"></div>
 
 <div id="nav-links">
-  {{-- HEADER --}}
+  
   <div class="flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
     <a href="/" class="flex items-center gap-3" onclick="closeMenu()">
       <img src="/images/logo-visa.webp" class="w-10 h-10 object-contain" alt="Logo">
@@ -239,7 +239,7 @@
     </button>
   </div>
 
-  {{-- MENU --}}
+  
   <div class="flex flex-col p-4 gap-2 flex-1 overflow-y-auto">
     <a href="/" onclick="closeMenu()" class="menu-item {{ request()->is('/') ? 'active' : '' }}">
       {{ __('site.nav_home') }}
@@ -261,14 +261,14 @@
     </a>
   </div>
 
-  {{-- FOOTER --}}
+  
   <div class="p-6 border-t border-white/10 shrink-0 space-y-4">
     <div>
       <p class="text-white text-[0.7rem] uppercase tracking-widest font-semibold mb-3">{{ __('site.nav_language') !== 'site.nav_language' ? __('site.nav_language') : 'Language' }}</p>
       <div class="flex gap-2 flex-wrap">
         @foreach($langs as $code => $info)
           <a href="{{ route('locale.switch', $code) }}"
-             class="px-3 py-2 rounded-lg text-sm font-semibold transition-colors {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/20 text-white hover:bg-white/30' }}">
+             class="px-3.5 py-2.5 rounded-lg text-sm font-semibold transition-colors {{ app()->getLocale() === $code ? 'bg-[var(--color-gold)] text-[var(--color-navy)]' : 'bg-white/20 text-white hover:bg-white/30' }}">
             {{ $info['flag'] }} {{ strtoupper($code) }}
           </a>
         @endforeach

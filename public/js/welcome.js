@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ── Navbar scroll effect (RAF-batched to prevent forced reflow) ──
+
     const navbar = document.getElementById('main-navbar');
     const backToTop = document.getElementById('back-to-top');
 
@@ -25,14 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // ── Back to top click ───────────────────────────────
     if (backToTop) {
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
-    // ── Language dropdown ────────────────────────────────
     const langBtn = document.getElementById('lang-dropdown-btn');
     const langMenu = document.getElementById('lang-dropdown-menu');
     const langChevron = document.getElementById('lang-chevron');
@@ -57,9 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Mobile menu toggle is now handled in navbar.blade.php ──
 
-    // ── FAQ accordion ───────────────────────────────────
     const initFaq = () => {
         document.querySelectorAll('[data-faq]').forEach(item => {
             const toggleBtn = item.querySelector('.faq-q');
@@ -73,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // ── Scroll reveal ───────────────────────────────────
     const initScrollReveal = () => {
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
@@ -88,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         reveals.forEach(el => observer.observe(el));
     };
 
-    // ── Count-up animation ──────────────────────────────
     const initCounters = () => {
         const counters = document.querySelectorAll('[data-count-target]');
         if (counters.length) {
@@ -135,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Defer non-critical UI initialization
     if ('requestIdleCallback' in window) {
         requestIdleCallback(() => {
             initFaq();

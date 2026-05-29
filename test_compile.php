@@ -14,5 +14,5 @@ try {
 } catch (\Throwable $e) {
     echo "Error: " . $e->getMessage() . "\n";
     echo "Line: " . $e->getLine() . "\n";
-    // echo "Trace: " . $e->getTraceAsString() . "\n";
+    
 }

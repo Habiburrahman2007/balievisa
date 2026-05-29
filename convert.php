@@ -1,12 +1,12 @@
 <?php
-/**
- * Image Optimization Script
- * 
- * This script converts key images to WebP and resizes the logo to improve performance.
- * It also scans the articles storage for optimization.
- */
 
-// 1. Static Assets — uses indexed array so one source can have multiple outputs
+
+
+
+
+
+
+
 $staticFiles = [
     ['src' => 'public/img/hero-bali.jpg', 'dest' => 'public/img/hero-bali.webp', 'quality' => 30],
     ['src' => 'public/img/hero-bali.jpg', 'dest' => 'public/img/hero-bali-mobile.webp', 'quality' => 15, 'resize' => [800, 500]],
@@ -15,7 +15,7 @@ $staticFiles = [
     ['src' => 'public/images/logo-visa.png', 'dest' => 'public/images/logo-visa.webp', 'quality' => 90, 'resize' => [128, 128]],
 ];
 
-// 2. Scan Articles
+
 $articleDir = 'storage/app/public/articles';
 if (is_dir($articleDir)) {
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($articleDir));
@@ -60,7 +60,7 @@ foreach ($staticFiles as $config) {
     }
 
     if ($im) {
-        // Handle Resizing
+        
         if (isset($config['resize'])) {
             $width = imagesx($im);
             $height = imagesy($im);

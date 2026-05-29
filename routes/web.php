@@ -67,7 +67,7 @@ Route::get('/news/{slug}', function ($slug) {
 })->name('news.detail');
 
 
-// Locale switcher
+
 Route::get('/locale/{locale}', function (string $locale) {
     if (in_array($locale, ['en', 'zh', 'es', 'ar', 'hi'])) {
         session()->put('locale', $locale);

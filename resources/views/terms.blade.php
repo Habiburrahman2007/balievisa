@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  {{-- ═══════════════════════════════════════════ TERMS HERO ═══ --}}
+  
   <section class="relative bg-gradient-to-br from-[var(--color-navy)] via-[var(--color-navy-light)] to-[var(--color-navy)] py-20 overflow-hidden">
     <div class="absolute inset-0 bg-[url('/img/hero-bali.png')] bg-center bg-cover opacity-5"></div>
     <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 80% 20%, rgba(255,193,7,0.2) 0%, transparent 50%);"></div>
@@ -15,13 +15,13 @@
     </div>
   </section>
 
-  {{-- ═══════════════════════════════════════════ TERMS CONTENT ═══ --}}
+  
   <section class="py-20 bg-[var(--color-bg)]">
     <div class="max-w-[720px] mx-auto px-6 md:px-10">
       
       <div class="flex flex-col gap-20">
         
-        {{-- Section 1: Service Agreement --}}
+        
         <div class="reveal">
           <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-[var(--color-navy)] text-[var(--color-gold)] rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-[var(--color-navy)]/5">
@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        {{-- Section 2: Responsibilities --}}
+        
         <div class="reveal reveal-delay-1">
           <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-[var(--color-navy)] text-[var(--color-gold)] rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-[var(--color-navy)]/5">
@@ -55,7 +55,7 @@
           </div>
         </div>
 
-        {{-- Section 3: Fees --}}
+        
         <div class="reveal reveal-delay-2">
           <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-[var(--color-navy)] text-[var(--color-gold)] rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-[var(--color-navy)]/5">
@@ -73,7 +73,7 @@
           </div>
         </div>
 
-        {{-- Section 4: Processing --}}
+        
         <div class="reveal reveal-delay-3">
           <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-[var(--color-navy)] text-[var(--color-gold)] rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-[var(--color-navy)]/5">
@@ -89,7 +89,7 @@
           </div>
         </div>
 
-        {{-- Section 5: Liability --}}
+        
         <div class="reveal reveal-delay-4">
           <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-red-600 text-white rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-red-600/5">
@@ -103,7 +103,7 @@
           </div>
         </div>
 
-        {{-- Section 6: Communication --}}
+        
         <div class="reveal reveal-delay-5">
           <div class="flex flex-col items-start text-left mb-10">
             <div class="w-16 h-16 bg-[var(--color-navy)] text-[var(--color-gold)] rounded-2xl flex items-center justify-center shadow-xl mb-5 ring-4 ring-[var(--color-navy)]/5">
@@ -121,7 +121,7 @@
           </div>
         </div>
 
-        {{-- Section 7: Law --}}
+        
         <div class="reveal reveal-delay-5">
           <div class="bg-[var(--color-navy)] rounded-[2.5rem] p-12 text-left shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 opacity-10 bg-[url('/img/pattern.png')]"></div>
@@ -134,7 +134,7 @@
 
       </div>
 
-      {{-- Back Home --}}
+      
       <div class="mt-24 text-left reveal">
         <a href="/" class="text-[var(--color-navy)] font-bold text-sm flex items-center justify-start gap-2 hover:text-[var(--color-gold)] transition-colors group">
           <svg class="transition-transform group-hover:-translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"/></svg>

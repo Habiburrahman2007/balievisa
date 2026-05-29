@@ -1,8 +1,8 @@
-/* ═══════════════════════════════════════════════════════════════
-   Immigration Portal – Global Styles
-   ═══════════════════════════════════════════════════════════════ */
 
-/* Smooth scroll only for users/devices that support it without jank */
+
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -17,7 +17,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Reveal Animations ─────────────────────────────────────── */
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -34,16 +34,16 @@ body {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ── Navbar Scroll ─────────────────────────────────────────── */
+
 #main-navbar.scrolled {
   background: #ffffff;
   box-shadow: 0 4px 24px rgba(0, 43, 91, 0.12);
 }
 
-/* ── Mobile Menu Overlay ───────────────────────────────────── */
-/* Styles now controlled via Tailwind in navbar.blade.php */
 
-/* ── Quick Action Cards ────────────────────────────────────── */
+
+
+
 .qa-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -63,7 +63,7 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* ── News Cards ────────────────────────────────────────────── */
+
 .news-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -73,7 +73,7 @@ body {
   box-shadow: 0 8px 32px rgba(0, 43, 91, 0.1);
 }
 
-/* ── FAQ Accordion ─────────────────────────────────────────── */
+
 .faq-item.open .faq-icon {
   transform: rotate(45deg);
 }
@@ -87,7 +87,7 @@ body {
   will-change: auto;
 }
 
-/* ── High Contrast Mode ────────────────────────────────────── */
+
 html.high-contrast {
   --hc-bg: #000000;
   --hc-text: #FFFFFF;
@@ -146,7 +146,7 @@ html.high-contrast select {
   border-color: #FFD700 !important;
 }
 
-/* ── Accessibility Widget ──────────────────────────────────── */
+
 .a11y-widget {
   position: fixed;
   bottom: 24px;
@@ -247,7 +247,7 @@ html.high-contrast select {
   transform: translateX(20px);
 }
 
-/* ── Language Switcher ─────────────────────────────────────── */
+
 .lang-switch {
   display: inline-flex;
   border-radius: 4px;
@@ -277,7 +277,7 @@ html.high-contrast select {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* ── Smooth Gradient Pulse ─────────────────────────────────── */
+
 @keyframes goldPulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
   50% { box-shadow: 0 0 0 12px rgba(255, 193, 7, 0); }
@@ -287,10 +287,10 @@ html.high-contrast select {
   animation: goldPulse 2s ease-in-out infinite;
 }
 
-/* ── Navbar Responsive ─────────────────────────────────────── */
-/* Hamburger visibility now controlled via Tailwind lg:hidden in navbar.blade.php */
 
-/* ── Article Content (Rich Text) ───────────────────────────── */
+
+
+
 .prose {
   color: #334155;
   line-height: 1.8;

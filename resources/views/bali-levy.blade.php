@@ -20,9 +20,9 @@
 
 @section('content')
 
-  {{-- Hero Header --}}
+  
   <section class="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-[var(--color-navy)]">
-    {{-- Background Image + Overlay --}}
+    
     <div class="absolute inset-0 z-0">
       <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=2000"
         alt="Bali Landscape" class="w-full h-full object-cover shadow-2xl" />
@@ -45,7 +45,7 @@
     </div>
   </section>
 
-  {{-- Operational Feature --}}
+  
   <section class="relative z-20 -mt-24 max-w-5xl mx-auto px-6 mb-24">
     <div
       class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-white flex flex-col md:flex-row gap-10 items-center ring-1 ring-gray-100 ring-offset-4">
@@ -106,7 +106,7 @@
     </div>
   </section>
 
-  {{-- Information Grid --}}
+  
   <section class="max-w-[1200px] mx-auto px-6 mb-32">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-navy)] mb-6 tracking-tight">
@@ -115,7 +115,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-      {{-- Column 1 --}}
+      
       <div
         class="group bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full transform hover:-translate-y-2">
         <div class="h-60 overflow-hidden relative">
@@ -138,7 +138,7 @@
         </div>
       </div>
 
-      {{-- Column 2 --}}
+      
       <div
         class="group bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full transform hover:-translate-y-2">
         <div class="h-60 overflow-hidden relative">
@@ -163,7 +163,7 @@
         </div>
       </div>
 
-      {{-- Column 3 --}}
+      
       <div
         class="group bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full transform hover:-translate-y-2">
         <div class="h-60 overflow-hidden relative">
@@ -190,7 +190,7 @@
     </div>
   </section>
 
-  {{-- FAQ Section --}}
+  
   <section class="py-24 bg-slate-50 relative z-10 border-t border-slate-200/50">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">

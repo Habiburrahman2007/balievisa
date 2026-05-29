@@ -38,7 +38,7 @@
 @endsection
 
 @section('content')
-  {{-- ═══════════════════════════════════════════ FAQ HERO ═══ --}}
+  
   <section class="relative bg-gradient-to-br from-[var(--color-navy)] via-[var(--color-navy-light)] to-[var(--color-navy)] py-20 overflow-hidden">
     <div class="absolute inset-0 bg-[url('/img/hero-bali.png')] bg-center bg-cover opacity-5"></div>
     <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 80% 20%, rgba(255,193,7,0.2) 0%, transparent 50%);"></div>
@@ -52,7 +52,7 @@
     </div>
   </section>
 
-  {{-- ═══════════════════════════════════════════ FAQ CONTENT ═══ --}}
+  
   <section class="py-16 bg-[var(--color-bg)]">
     <div class="max-w-[1200px] mx-auto px-6">
 
@@ -66,7 +66,7 @@
 
       @foreach($categories as $ci => $cat)
         <div class="mb-10 reveal {{ $ci > 0 ? 'reveal-delay-1' : '' }}">
-          {{-- Category Header --}}
+          
           <div class="flex items-center gap-3 mb-5">
             <div class="w-10 h-10 bg-[var(--color-navy)]/10 rounded-xl flex items-center justify-center flex-shrink-0">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{!! $cat['icon'] !!}</svg>
@@ -74,7 +74,7 @@
             <h2 class="text-lg font-bold text-[var(--color-navy)]">{{ __('site.faq_cat_' . $cat['key']) }}</h2>
           </div>
 
-          {{-- Accordion Items --}}
+          
           <div class="flex flex-col gap-3">
             @foreach($cat['items'] as $num)
               <div data-faq class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all hover:border-[var(--color-navy)]/20 shadow-sm hover:shadow-md">
@@ -94,7 +94,7 @@
         </div>
       @endforeach
 
-      {{-- Contact CTA --}}
+      
       <div class="bg-gradient-to-r from-[var(--color-navy)] to-[var(--color-navy-light)] rounded-2xl p-8 text-center mt-6 reveal">
         <h3 class="text-xl font-bold text-white mb-3">{{ __('site.faq_cta_title') }}</h3>
         <p class="text-white/80 text-[0.9rem] mb-6 max-w-[400px] mx-auto">{{ __('site.faq_cta_desc') }}</p>

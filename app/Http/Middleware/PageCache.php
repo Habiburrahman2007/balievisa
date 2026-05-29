@@ -10,22 +10,22 @@ use Illuminate\Support\Facades\Response;
 
 class PageCache
 {
-    /**
-     * Cache duration in seconds (1 hour).
-     * Using the 'file' store explicitly — avoids the latency of CACHE_STORE=database
-     * which adds a DB round-trip on every single cached page hit.
-     */
+    
+
+
+
+
     private const TTL = 3600;
     private const STORE = 'file';
 
     public function handle(Request $request, Closure $next)
     {
-        // Only cache GET requests with no query string (except lang param)
+        
         if (!$request->isMethod('get')) {
             return $next($request);
         }
 
-        // Build a cache key from URL + locale
+        
         $locale = App::getLocale();
         $key = 'page_cache_' . md5($request->fullUrl() . '_' . $locale);
 
@@ -33,10 +33,10 @@ class PageCache
 
         if ($store->has($key)) {
             $cached = $store->get($key);
-            // Generate ETag from content hash for 304 Not Modified support
+            
             $etag = '"' . md5($cached) . '"';
 
-            // Return 304 if browser already has a fresh copy
+            
             if ($request->header('If-None-Match') === $etag) {
                 return Response::make('', 304)
                     ->header('ETag', $etag)
@@ -50,7 +50,7 @@ class PageCache
                 ->header('X-Cache', 'HIT');
         }
 
-        /** @var \Illuminate\Http\Response $response */
+        
         $response = $next($request);
 
         if ($response->getStatusCode() === 200) {

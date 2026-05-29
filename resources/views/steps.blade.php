@@ -4,9 +4,9 @@
 
 @section('content')
 <div class="bg-gray-50 pt-32 pb-20 min-h-screen">
-  {{-- ═══════════════════════════════════════════ HOW IT WORKS (STEPS) ═══ --}}
+  
   <section id="steps" class="max-w-[1200px] mx-auto px-6 mb-12">
-    {{-- Section Header --}}
+    
     <div class="text-center mb-10">
       <div class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-600 px-3 py-1.5 rounded-md text-[0.7rem] font-bold tracking-widest uppercase mb-4 border border-blue-100 shadow-sm">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"></path><path d="M14 3v5h5M16 13H8M16 17H8M10 9H8"></path></svg>
@@ -21,17 +21,17 @@
       </p>
     </div>
 
-    {{-- Comparison Columns --}}
+    
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
       
-      {{-- VS Badge --}}
+      
       <div class="hidden md:flex absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-blue-600 text-white rounded-full items-center justify-center font-black text-lg z-20 shadow-[0_0_0_6px_#f9fafb]">
         VS
       </div>
 
-      {{-- LEFT COLUMN: DO IT YOURSELF --}}
+      
       <div class="bg-[#fef5f5] rounded-3xl p-6 md:p-8 flex flex-col h-full border border-red-50 relative overflow-hidden">
-        {{-- Header Badge --}}
+        
         <div class="flex justify-center mb-6 z-10 relative">
           <div class="bg-[#d32f2f] text-white px-5 py-2 rounded-full font-bold text-sm inline-flex items-center gap-2 shadow-sm">
             <div class="bg-white/20 rounded-full w-5 h-5 flex items-center justify-center">
@@ -43,7 +43,7 @@
 
         <p class="text-center font-bold text-slate-800 mb-6 text-[0.95rem] z-10 relative">You need to access multiple official websites:</p>
 
-        {{-- 3 Websites Row --}}
+        
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-8 z-10 relative">
           <div class="bg-white rounded-xl p-3 text-center border border-red-50 flex flex-col items-center shadow-sm">
             <div class="w-10 h-10 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mb-2">
@@ -68,7 +68,7 @@
           </div>
         </div>
 
-        {{-- Lists Row --}}
+        
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6 z-10 relative">
           <div>
             <p class="text-[0.8rem] font-bold text-slate-800 mb-3 bg-white/70 backdrop-blur-sm p-1 rounded inline-block">Each website requires:</p>
@@ -129,9 +129,9 @@
 
       </div>
 
-      {{-- RIGHT COLUMN: USE OUR SERVICE --}}
+      
       <div class="bg-[#f0f9f4] rounded-3xl p-6 md:p-8 flex flex-col h-full border border-green-100 relative overflow-hidden">
-        {{-- Header Badge --}}
+        
         <div class="flex justify-center mb-6 z-10 relative">
           <div class="bg-[#2e7d32] text-white px-5 py-2 rounded-full font-bold text-sm inline-flex items-center gap-2 shadow-sm">
             <div class="bg-white/20 rounded-full w-5 h-5 flex items-center justify-center">
@@ -143,7 +143,7 @@
 
         <p class="text-center font-bold text-slate-800 mb-6 text-[0.95rem] z-10 relative">Everything handled in one place.</p>
 
-        {{-- 4 Steps Row --}}
+        
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-8 z-10 relative">
           <div class="bg-white rounded-xl p-2 text-center border border-green-50 flex flex-col items-center shadow-sm">
             <div class="w-8 h-8 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center mb-1.5">
@@ -226,7 +226,7 @@
       </div>
     </div>
 
-    {{-- Blue Banner Divider --}}
+    
     <div class="bg-[#1a365d] rounded-2xl p-6 px-8 mt-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
       <div class="flex flex-col md:flex-row md:items-center gap-4 z-10 w-full md:w-auto">
         <div class="w-12 h-12 rounded-full border border-yellow-400 flex items-center justify-center relative shrink-0 shadow-[0_0_15px_rgba(250,204,21,0.3)] bg-[#1a365d]">
@@ -250,7 +250,7 @@
       </div>
     </div>
 
-    {{-- Most Travelers Think Warning banner --}}
+    
     <div class="mt-6 bg-[#fef5f5] rounded-2xl border border-red-100 p-6 flex flex-col md:flex-row items-stretch gap-6 lg:gap-8 overflow-hidden">
       <div class="rounded-xl overflow-hidden shrink-0 h-[140px] md:h-auto md:w-56 lg:w-72 relative border border-gray-200">
          <img src="/img/blog-hidden-gems.png" class="w-full h-full object-cover">
@@ -286,7 +286,7 @@
       </div>
     </div>
 
-    {{-- Call to action & price --}}
+    
     <div class="mt-6 bg-[#1a4ea8] rounded-3xl p-6 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 bg-gradient-to-r from-[#153b82] via-[#1a4ea8] to-[#1e58c2] shadow-[0_10px_30px_rgba(26,54,93,0.2)] border border-blue-400">
       <div class="flex-1 w-full text-center lg:text-left">
          <h3 class="text-[1.4rem] md:text-[1.8rem] font-semibold text-white/90 leading-tight mb-2">
